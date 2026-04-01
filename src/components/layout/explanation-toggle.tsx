@@ -27,11 +27,12 @@ export function ExplanationToggle() {
   return (
     <div className="flex items-center gap-2 select-none">
       <span
-        className={`hidden sm:inline text-xs font-medium transition-colors ${
+        className={`text-xs font-medium transition-colors ${
           !isDev ? "text-green-400 light:text-foreground" : "text-muted-foreground"
         }`}
       >
-        🟢 초딩모드
+        <span className="sm:hidden">🟢</span>
+        <span className="hidden sm:inline">🟢 초딩모드</span>
       </span>
 
       <button
@@ -49,11 +50,12 @@ export function ExplanationToggle() {
       </button>
 
       <span
-        className={`hidden sm:inline text-xs font-medium transition-colors ${
+        className={`text-xs font-medium transition-colors ${
           isDev ? "text-indigo-400 light:text-foreground" : "text-muted-foreground"
         }`}
       >
-        🔵 개발자모드
+        <span className="sm:hidden">🔵</span>
+        <span className="hidden sm:inline">🔵 개발자모드</span>
       </span>
 
       {/* 힌트 아이콘 */}

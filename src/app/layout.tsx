@@ -41,8 +41,7 @@ export default function RootLayout({
           <header className="flex h-12 shrink-0 items-center justify-between border-b border-border bg-background px-4">
             <div className="flex items-center gap-2">
               <span className="font-mono text-xs text-muted-foreground">
-                <span className="hidden sm:inline">react-bible</span>
-                <span className="sm:hidden">RB</span>
+                react-bible
               </span>
               <span className="hidden sm:inline text-muted-foreground/40">/</span>
               <span className="hidden sm:inline font-mono text-xs text-muted-foreground">v1.0.0</span>
