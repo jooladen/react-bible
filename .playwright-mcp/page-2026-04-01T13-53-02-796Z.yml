@@ -1,0 +1,212 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]: react-bible
+      - generic [ref=e5]: /
+      - generic [ref=e6]: v1.0.0
+    - generic [ref=e7]:
+      - generic [ref=e8]: 🟢 초딩모드
+      - 'switch "설명 모드: 초딩" [ref=e9]'
+      - generic [ref=e11]: 🔵 개발자모드
+      - generic [ref=e12]:
+        - button "?" [ref=e13]
+        - generic [ref=e216]:
+          - paragraph [ref=e217]: 같은 개념, 두 개의 렌즈
+          - generic [ref=e218]:
+            - generic [ref=e219]:
+              - paragraph [ref=e220]: 🟢 초딩모드
+              - paragraph [ref=e221]:
+                - text: 어려운 내용도 비유와 이야기로 —
+                - text: ‘왜 이렇게 됐지?’부터 시작합니다
+            - generic [ref=e222]:
+              - paragraph [ref=e223]: 🔵 개발자모드
+              - paragraph [ref=e224]:
+                - text: 코드와 원리 중심 —
+                - text: ‘어떻게 동작하는지’ 끝까지 파고듭니다
+  - generic [ref=e14]:
+    - complementary [ref=e15]:
+      - generic [ref=e17]:
+        - generic [ref=e18]: 🧬
+        - generic [ref=e19]:
+          - heading "React Bible" [level=1] [ref=e20]
+          - paragraph [ref=e21]: 20 Core Concepts
+      - navigation [ref=e22]:
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - generic [ref=e25]:
+              - paragraph [ref=e26]: Phase 1
+              - paragraph [ref=e27]: 입력과 기초 - 데이터의 본질
+            - generic [ref=e28]: 0/5
+          - generic [ref=e29]:
+            - link "01 불변성 & Immer 🟢 쉬움" [ref=e30] [cursor=pointer]:
+              - /url: /stage/immutability
+              - generic [ref=e31]: "01"
+              - generic [ref=e32]:
+                - generic [ref=e33]: 불변성 & Immer
+                - generic [ref=e35]: 🟢 쉬움
+            - link "02 Rendering & Reconciliation 🟡 보통" [ref=e36] [cursor=pointer]:
+              - /url: /stage/rendering
+              - generic [ref=e37]: "02"
+              - generic [ref=e38]:
+                - generic [ref=e39]: Rendering & Reconciliation
+                - generic [ref=e41]: 🟡 보통
+            - link "03 Component Lifecycle 🟢 쉬움" [ref=e42] [cursor=pointer]:
+              - /url: /stage/lifecycle
+              - generic [ref=e43]: "03"
+              - generic [ref=e44]:
+                - generic [ref=e45]: Component Lifecycle
+                - generic [ref=e47]: 🟢 쉬움
+            - link "04 Hooks 기초 🟢 쉬움" [ref=e48] [cursor=pointer]:
+              - /url: /stage/hooks-basic
+              - generic [ref=e49]: "04"
+              - generic [ref=e50]:
+                - generic [ref=e51]: Hooks 기초
+                - generic [ref=e53]: 🟢 쉬움
+            - link "05 Event Bubbling & Capture 🟡 보통" [ref=e54] [cursor=pointer]:
+              - /url: /stage/event-bubbling
+              - generic [ref=e55]: "05"
+              - generic [ref=e56]:
+                - generic [ref=e57]: Event Bubbling & Capture
+                - generic [ref=e59]: 🟡 보통
+        - generic [ref=e60]:
+          - generic [ref=e61]:
+            - generic [ref=e62]:
+              - paragraph [ref=e63]: Phase 2
+              - paragraph [ref=e64]: 가공과 최적화 - 불필요한 연산 걷어내기
+            - generic [ref=e65]: 0/5
+          - generic [ref=e66]:
+            - link "06 Hooks & Closure 🔴 어려움" [ref=e67] [cursor=pointer]:
+              - /url: /stage/hooks-closure
+              - generic [ref=e68]: "06"
+              - generic [ref=e69]:
+                - generic [ref=e70]: Hooks & Closure
+                - generic [ref=e72]: 🔴 어려움
+            - link "07 Memoization 🟡 보통" [ref=e73] [cursor=pointer]:
+              - /url: /stage/memoization
+              - generic [ref=e74]: "07"
+              - generic [ref=e75]:
+                - generic [ref=e76]: Memoization
+                - generic [ref=e78]: 🟡 보통
+            - link "08 Design Systems 🟡 보통" [ref=e79] [cursor=pointer]:
+              - /url: /stage/design-systems
+              - generic [ref=e80]: "08"
+              - generic [ref=e81]:
+                - generic [ref=e82]: Design Systems
+                - generic [ref=e84]: 🟡 보통
+            - link "09 CSS-in-JS vs Tailwind 🟢 쉬움" [ref=e85] [cursor=pointer]:
+              - /url: /stage/css-strategies
+              - generic [ref=e86]: "09"
+              - generic [ref=e87]:
+                - generic [ref=e88]: CSS-in-JS vs Tailwind
+                - generic [ref=e90]: 🟢 쉬움
+            - link "10 Performance Profiling 🔴 어려움" [ref=e91] [cursor=pointer]:
+              - /url: /stage/profiling
+              - generic [ref=e92]: "10"
+              - generic [ref=e93]:
+                - generic [ref=e94]: Performance Profiling
+                - generic [ref=e96]: 🔴 어려움
+        - generic [ref=e97]:
+          - generic [ref=e98]:
+            - generic [ref=e99]:
+              - paragraph [ref=e100]: Phase 3
+              - paragraph [ref=e101]: 확장과 연결 - 덩치가 커지는 단계
+            - generic [ref=e102]: 0/5
+          - generic [ref=e103]:
+            - link "11 Context & Prop Drilling 🟡 보통" [ref=e104] [cursor=pointer]:
+              - /url: /stage/context
+              - generic [ref=e105]: "11"
+              - generic [ref=e106]:
+                - generic [ref=e107]: Context & Prop Drilling
+                - generic [ref=e109]: 🟡 보통
+            - link "12 State Management 🟡 보통" [ref=e110] [cursor=pointer]:
+              - /url: /stage/state-management
+              - generic [ref=e111]: "12"
+              - generic [ref=e112]:
+                - generic [ref=e113]: State Management
+                - generic [ref=e115]: 🟡 보통
+            - link "13 Async State Handling 🔴 어려움" [ref=e116] [cursor=pointer]:
+              - /url: /stage/async-state
+              - generic [ref=e117]: "13"
+              - generic [ref=e118]:
+                - generic [ref=e119]: Async State Handling
+                - generic [ref=e121]: 🔴 어려움
+            - link "14 Server State & Caching 🟡 보통" [ref=e122] [cursor=pointer]:
+              - /url: /stage/server-state
+              - generic [ref=e123]: "14"
+              - generic [ref=e124]:
+                - generic [ref=e125]: Server State & Caching
+                - generic [ref=e127]: 🟡 보통
+            - link "15 Fine-grained Reactivity 🔴 어려움" [ref=e128] [cursor=pointer]:
+              - /url: /stage/signals
+              - generic [ref=e129]: "15"
+              - generic [ref=e130]:
+                - generic [ref=e131]: Fine-grained Reactivity
+                - generic [ref=e133]: 🔴 어려움
+        - generic [ref=e134]:
+          - generic [ref=e135]:
+            - generic [ref=e136]:
+              - paragraph [ref=e137]: Phase 4
+              - paragraph [ref=e138]: 운영과 인프라 - 장인의 마무리
+            - generic [ref=e139]: 0/5
+          - generic [ref=e140]:
+            - link "16 Testing Strategy 🟡 보통" [ref=e141] [cursor=pointer]:
+              - /url: /stage/testing
+              - generic [ref=e142]: "16"
+              - generic [ref=e143]:
+                - generic [ref=e144]: Testing Strategy
+                - generic [ref=e146]: 🟡 보통
+            - link "17 Hydration & SSR 🔴 어려움" [ref=e147] [cursor=pointer]:
+              - /url: /stage/hydration
+              - generic [ref=e148]: "17"
+              - generic [ref=e149]:
+                - generic [ref=e150]: Hydration & SSR
+                - generic [ref=e152]: 🔴 어려움
+            - link "18 Bundle Optimization 🔴 어려움" [ref=e153] [cursor=pointer]:
+              - /url: /stage/bundle-optimization
+              - generic [ref=e154]: "18"
+              - generic [ref=e155]:
+                - generic [ref=e156]: Bundle Optimization
+                - generic [ref=e158]: 🔴 어려움
+            - link "19 Web Workers 🔴 어려움" [ref=e159] [cursor=pointer]:
+              - /url: /stage/web-workers
+              - generic [ref=e160]: "19"
+              - generic [ref=e161]:
+                - generic [ref=e162]: Web Workers
+                - generic [ref=e164]: 🔴 어려움
+            - link "20 Micro Frontends 🔴 어려움" [ref=e165] [cursor=pointer]:
+              - /url: /stage/mfe
+              - generic [ref=e166]: "20"
+              - generic [ref=e167]:
+                - generic [ref=e168]: Micro Frontends
+                - generic [ref=e170]: 🔴 어려움
+      - paragraph [ref=e172]: 0 / 20 completed
+    - main [ref=e173]:
+      - generic [ref=e175]:
+        - generic [ref=e176]:
+          - generic [ref=e178]:
+            - generic [ref=e179]:
+              - generic [ref=e180]: "01"
+              - generic [ref=e181]: 🟢 쉬움
+              - generic [ref=e182]: 입력과 기초
+            - generic [ref=e183]:
+              - heading "불변성 & Immer" [level=2] [ref=e184]
+              - generic [ref=e185]: ": 모든 시작은 '새 주소 발급'입니다."
+            - paragraph [ref=e186]: 데이터의 본질
+          - generic [ref=e187]:
+            - button "📖 이론" [ref=e188]:
+              - generic [ref=e189]: 📖
+              - generic [ref=e190]: 이론
+            - button "⚗️ 실험실" [ref=e191]:
+              - generic [ref=e192]: ⚗️
+              - generic [ref=e193]: 실험실
+            - button "💻 코드 뷰어" [ref=e194]:
+              - generic [ref=e195]: 💻
+              - generic [ref=e196]: 코드 뷰어
+        - generic [ref=e200]:
+          - paragraph [ref=e201]: 🚧
+          - paragraph [ref=e202]: 이 섹션은 다음 세션에서 구현됩니다
+          - paragraph [ref=e203]: /pdca do immutability
+    - button "‹" [ref=e204]
+  - button "Open Next.js Dev Tools" [ref=e210] [cursor=pointer]:
+    - img [ref=e211]
+  - alert [ref=e215]

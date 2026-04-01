@@ -1,0 +1,402 @@
+{
+  "version": "3.0",
+  "lastUpdated": "2026-04-01T13:57:25.186Z",
+  "activeFeatures": [
+    "react-bible",
+    "stores",
+    "ui",
+    "layout",
+    "providers",
+    "[slug]"
+  ],
+  "primaryFeature": "react-bible",
+  "features": {
+    "react-bible": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-04-01T13:01:47.628Z",
+        "lastUpdated": "2026-04-01T13:57:25.185Z"
+      },
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\app\\page.tsx",
+      "stateMachine": {
+        "currentState": "do",
+        "previousState": null,
+        "stateHistory": [],
+        "retryCount": 0,
+        "maxRetries": 5,
+        "circuitBreakerOpen": false
+      },
+      "metrics": {
+        "qualityScore": null,
+        "conventionCompliance": null,
+        "apiCompliance": null,
+        "cycleTimeMs": null,
+        "iterationEfficiency": null
+      },
+      "phaseTimestamps": {},
+      "automationLevel": 2
+    },
+    "stores": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-04-01T13:02:37.291Z",
+        "lastUpdated": "2026-04-01T13:02:37.291Z"
+      },
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\stores\\explanation-store.ts"
+    },
+    "ui": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-04-01T13:02:54.217Z",
+        "lastUpdated": "2026-04-01T13:02:54.217Z"
+      },
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\components\\ui\\badge.tsx"
+    },
+    "layout": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-04-01T13:03:00.615Z",
+        "lastUpdated": "2026-04-01T13:57:19.431Z"
+      },
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\components\\layout\\home-redirect.tsx"
+    },
+    "providers": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-04-01T13:04:11.540Z",
+        "lastUpdated": "2026-04-01T13:04:11.540Z"
+      },
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\components\\providers\\query-provider.tsx"
+    },
+    "[slug]": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-04-01T13:04:35.599Z",
+        "lastUpdated": "2026-04-01T13:04:35.599Z"
+      },
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\app\\stage\\[slug]\\page.tsx"
+    }
+  },
+  "pipeline": {
+    "currentPhase": 1,
+    "level": "Dynamic",
+    "phaseHistory": []
+  },
+  "session": {
+    "startedAt": "2026-04-01T13:01:47.628Z",
+    "onboardingCompleted": false,
+    "lastActivity": "2026-04-01T13:57:25.186Z"
+  },
+  "history": [
+    {
+      "timestamp": "2026-04-01T13:01:47.628Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:01:50.435Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:02:26.175Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:02:37.291Z",
+      "feature": "stores",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:02:54.217Z",
+      "feature": "ui",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:03:00.615Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:03:19.010Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:03:38.707Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:04:01.650Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:04:11.540Z",
+      "feature": "providers",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:04:25.452Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:04:35.599Z",
+      "feature": "[slug]",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:31:50.431Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:33:52.758Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:33:57.631Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:34:03.287Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:34:09.690Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:34:14.989Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:34:21.521Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:34:29.417Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:34:35.548Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:34:41.474Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:34:46.813Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:34:52.601Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:34:58.576Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:35:06.123Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:35:11.934Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:35:18.340Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:35:25.662Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:35:32.341Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:35:38.161Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:35:44.575Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:35:51.151Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:38:16.120Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:40:28.502Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:42:48.488Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:42:53.971Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:43:00.054Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:47:49.384Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:47:59.590Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:52:38.248Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:57:09.106Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:57:19.431Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T13:57:25.185Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    }
+  ],
+  "stateMachine": {
+    "defaultWorkflow": "default",
+    "activeWorkflows": {},
+    "totalTransitions": 0
+  },
+  "automation": {
+    "globalLevel": 2,
+    "trustScore": 40,
+    "pendingApprovals": 0,
+    "lastGateResult": null
+  },
+  "team": {
+    "enabled": true,
+    "stateFile": ".bkit/runtime/agent-state.json",
+    "eventsFile": ".bkit/runtime/agent-events.jsonl"
+  }
+}
