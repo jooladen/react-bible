@@ -4,10 +4,21 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { DifficultyBadge } from "@/components/ui/badge"
+import { Progress } from "@/components/ui/progress"
 import { STAGES, STAGE_GROUPS } from "@/lib/stages"
+import { useProgressStore } from "@/stores/progress-store"
+import { resolveStageCompletion } from "@/lib/stage-utils"
 import type { Stage } from "@/types/stage"
 
-function StageItem({ stage, isActive }: { stage: Stage; isActive: boolean }) {
+function StageItem({
+  stage,
+  isActive,
+  isDone,
+}: {
+  stage: Stage
+  isActive: boolean
+  isDone: boolean
+}) {
   return (
     <Link
       href={`/stage/${stage.slug}`}
@@ -30,7 +41,7 @@ function StageItem({ stage, isActive }: { stage: Stage; isActive: boolean }) {
         <div className="truncate font-medium leading-tight">{stage.title}</div>
         <div className="mt-0.5 flex items-center gap-1.5">
           <DifficultyBadge difficulty={stage.difficulty} />
-          {stage.status === "done" && (
+          {isDone && (
             <span className="text-[10px] text-green-400">✓</span>
           )}
         </div>
@@ -42,6 +53,11 @@ function StageItem({ stage, isActive }: { stage: Stage; isActive: boolean }) {
 export function Sidebar() {
   const pathname = usePathname()
   const activeSlug = pathname.split("/stage/")[1] ?? ""
+  const { completedSlugs } = useProgressStore()
+
+  const completedCount = STAGES.filter((s) =>
+    resolveStageCompletion(s.slug, completedSlugs, s.status)
+  ).length
 
   return (
     <aside className="flex h-full w-72 shrink-0 flex-col border-r border-zinc-800 bg-zinc-950">
@@ -60,11 +76,24 @@ export function Sidebar() {
         </div>
       </div>
 
+      {/* Progress bar */}
+      <div className="border-b border-zinc-800 px-4 py-3">
+        <Progress
+          value={(completedCount / STAGES.length) * 100}
+          className="h-1.5"
+        />
+        <p className="mt-1.5 font-mono text-[10px] text-zinc-500">
+          {completedCount} / {STAGES.length} 완료
+        </p>
+      </div>
+
       {/* Stage list */}
       <nav className="flex-1 overflow-y-auto py-2">
         {STAGE_GROUPS.map((group) => {
           const stages = STAGES.filter((s) => s.group === group.id)
-          const doneCount = stages.filter((s) => s.status === "done").length
+          const doneCount = stages.filter((s) =>
+            resolveStageCompletion(s.slug, completedSlugs, s.status)
+          ).length
 
           return (
             <div key={group.id} className="mb-1">
@@ -90,6 +119,7 @@ export function Sidebar() {
                     key={stage.id}
                     stage={stage}
                     isActive={activeSlug === stage.slug}
+                    isDone={resolveStageCompletion(stage.slug, completedSlugs, stage.status)}
                   />
                 ))}
               </div>
@@ -101,8 +131,7 @@ export function Sidebar() {
       {/* Footer */}
       <div className="border-t border-zinc-800 px-4 py-3">
         <p className="font-mono text-[10px] text-zinc-600">
-          {STAGES.filter((s) => s.status === "done").length} / {STAGES.length}{" "}
-          completed
+          {completedCount} / {STAGES.length} completed
         </p>
       </div>
     </aside>

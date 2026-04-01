@@ -18,6 +18,8 @@
   --destructive: #ef4444;
   --ring: #818cf8;
   --radius: 0.5rem;
+  --secondary: #27272a;
+  --secondary-foreground: #fafafa;
 }
 
 @theme inline {
@@ -35,6 +37,8 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-ring: var(--ring);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

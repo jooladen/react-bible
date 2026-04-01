@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { DifficultyBadge } from "@/components/ui/badge"
 import { useExplanationStore } from "@/stores/explanation-store"
+import { useProgressStore } from "@/stores/progress-store"
 import { STAGES } from "@/lib/stages"
 import type { Stage } from "@/types/stage"
 
@@ -34,7 +35,9 @@ export function StageLayout({
 }: StageLayoutProps) {
   const [activeTab, setActiveTab] = useState<Tab>("theory")
   const { mode } = useExplanationStore()
+  const { markDone, isCompleted } = useProgressStore()
   const router = useRouter()
+  const done = isCompleted(stage.slug)
 
   const currentIndex = STAGES.findIndex((s) => s.id === stage.id)
   const prevStage = currentIndex > 0 ? STAGES[currentIndex - 1] : null
@@ -84,23 +87,49 @@ export function StageLayout({
           </div>
         </div>
 
-        {/* Tab bar */}
-        <div className="mt-4 flex items-center gap-1">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={cn(
-                "flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-all",
-                activeTab === tab.id
-                  ? "bg-indigo-500/20 text-indigo-300"
-                  : "text-zinc-500 hover:bg-zinc-800 hover:text-zinc-300"
-              )}
-            >
-              <span>{tab.icon}</span>
-              <span>{tab.label}</span>
-            </button>
-          ))}
+        {/* Stepper */}
+        <div className="mt-4 flex items-center gap-0">
+          {tabs.map((tab, i) => {
+            const isActive = activeTab === tab.id
+            const isPast = tabs.findIndex((t) => t.id === activeTab) > i
+            return (
+              <div key={tab.id} className="flex items-center">
+                <button
+                  onClick={() => setActiveTab(tab.id)}
+                  className={cn(
+                    "flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-all",
+                    isActive
+                      ? "bg-indigo-500/20 text-indigo-300"
+                      : isPast
+                        ? "text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200"
+                        : "text-zinc-600 hover:bg-zinc-800 hover:text-zinc-400"
+                  )}
+                >
+                  <span
+                    className={cn(
+                      "flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-bold",
+                      isActive
+                        ? "bg-indigo-500 text-white"
+                        : isPast
+                          ? "bg-zinc-600 text-zinc-200"
+                          : "border border-zinc-700 text-zinc-600"
+                    )}
+                  >
+                    {i + 1}
+                  </span>
+                  <span>{tab.label}</span>
+                </button>
+                {i < tabs.length - 1 && (
+                  <div
+                    className={cn(
+                      "h-px w-6 shrink-0",
+                      isPast ? "bg-zinc-600" : "bg-zinc-800"
+                    )}
+                  />
+                )}
+              </div>
+            )
+          })}
         </div>
       </div>
 
@@ -132,7 +161,7 @@ export function StageLayout({
         </AnimatePresence>
       </div>
 
-      {/* 이전 / 다음 내비게이션 */}
+      {/* 이전 / 다음 내비게이션 + 학습 완료 버튼 */}
       <div className="flex shrink-0 items-center justify-between border-t border-zinc-800 bg-zinc-950/50 px-6 py-3">
         {prevStage ? (
           <button
@@ -141,15 +170,25 @@ export function StageLayout({
             title="← 이전 (ArrowLeft)"
           >
             <span>←</span>
-            <span className="max-w-[160px] truncate">{prevStage.title}</span>
+            <span className="max-w-[120px] truncate">{prevStage.title}</span>
           </button>
         ) : (
           <div />
         )}
 
-        <span className="font-mono text-xs text-zinc-600">
-          {stage.id} / {STAGES.length}
-        </span>
+        {/* Plan SC: 학습 완료 버튼 — markDone → progress-store 저장 */}
+        {done ? (
+          <span className="flex items-center gap-1.5 rounded-md px-4 py-1.5 text-sm font-medium text-green-400">
+            ✓ 완료됨
+          </span>
+        ) : (
+          <button
+            onClick={() => markDone(stage.slug)}
+            className="flex items-center gap-1.5 rounded-md bg-indigo-500/20 px-4 py-1.5 text-sm font-medium text-indigo-300 transition-colors hover:bg-indigo-500/30"
+          >
+            ✅ 학습 완료
+          </button>
+        )}
 
         {nextStage ? (
           <button
@@ -157,7 +196,7 @@ export function StageLayout({
             className="flex items-center gap-2 rounded-md px-3 py-1.5 text-sm text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-zinc-200"
             title="다음 → (ArrowRight)"
           >
-            <span className="max-w-[160px] truncate">{nextStage.title}</span>
+            <span className="max-w-[120px] truncate">{nextStage.title}</span>
             <span>→</span>
           </button>
         ) : (
