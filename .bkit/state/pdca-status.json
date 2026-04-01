@@ -1,6 +1,6 @@
 {
   "version": "3.0",
-  "lastUpdated": "2026-04-01T15:12:06.726Z",
+  "lastUpdated": "2026-04-01T16:01:38.809Z",
   "activeFeatures": [
     "react-bible",
     "stores",
@@ -21,9 +21,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-04-01T13:01:47.628Z",
-        "lastUpdated": "2026-04-01T15:01:57.607Z"
+        "lastUpdated": "2026-04-01T16:00:57.126Z"
       },
-      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\lib\\stage-utils.ts",
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\app\\layout.tsx",
       "stateMachine": {
         "currentState": "do",
         "previousState": null,
@@ -51,9 +51,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-04-01T13:02:37.291Z",
-        "lastUpdated": "2026-04-01T15:01:51.111Z"
+        "lastUpdated": "2026-04-01T15:53:38.936Z"
       },
-      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\stores\\progress-store.ts"
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\stores\\theme-store.ts"
     },
     "ui": {
       "phase": "do",
@@ -77,9 +77,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-04-01T13:03:00.615Z",
-        "lastUpdated": "2026-04-01T15:03:18.508Z"
+        "lastUpdated": "2026-04-01T16:01:38.808Z"
       },
-      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\components\\layout\\stage-layout.tsx"
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\components\\layout\\sidebar.tsx"
     },
     "providers": {
       "phase": "do",
@@ -90,9 +90,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-04-01T13:04:11.540Z",
-        "lastUpdated": "2026-04-01T13:04:11.540Z"
+        "lastUpdated": "2026-04-01T15:53:44.668Z"
       },
-      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\components\\providers\\query-provider.tsx"
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\components\\providers\\store-hydration.tsx"
     },
     "[slug]": {
       "phase": "do",
@@ -116,7 +116,7 @@
       "documents": {},
       "timestamps": {
         "started": "2026-04-01T15:09:18.922Z",
-        "lastUpdated": "2026-04-01T15:12:06.725Z"
+        "lastUpdated": "2026-04-01T15:49:56.301Z"
       },
       "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\features\\stage-01-immutability\\playground.tsx"
     }
@@ -129,7 +129,7 @@
   "session": {
     "startedAt": "2026-04-01T13:01:47.628Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-04-01T15:12:06.726Z"
+    "lastActivity": "2026-04-01T16:01:38.809Z"
   },
   "history": [
     {
@@ -477,6 +477,138 @@
     {
       "timestamp": "2026-04-01T15:12:06.725Z",
       "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T15:43:48.977Z",
+      "feature": "stores",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T15:44:08.895Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T15:44:14.617Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T15:44:19.963Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T15:45:56.988Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T15:46:14.016Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T15:49:29.511Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T15:49:36.363Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T15:49:42.710Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T15:49:48.258Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T15:49:56.302Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T15:53:29.442Z",
+      "feature": "stores",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T15:53:34.112Z",
+      "feature": "stores",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T15:53:38.936Z",
+      "feature": "stores",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T15:53:44.668Z",
+      "feature": "providers",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T15:53:50.141Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T15:53:57.462Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:00:57.126Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:01:03.738Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:01:09.418Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:01:25.408Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:01:38.808Z",
+      "feature": "layout",
       "phase": "do",
       "action": "updated"
     }

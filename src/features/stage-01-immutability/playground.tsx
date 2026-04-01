@@ -1,7 +1,7 @@
 "use client"
 
 // Design Ref: §5.2 — Bad/Good/Immer 3섹션 + 메모리 주소 mock 시각화
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { produce } from "immer"
 
 const ITEM_LABEL = "사과"
@@ -18,7 +18,11 @@ function BadCasePanel() {
   const actualRef = useRef<string[]>([])
   const [displayed, setDisplayed] = useState<string[]>([])
   const [actualCount, setActualCount] = useState(0) // debug panel 강제 갱신용
-  const fixedAddress = useRef(genMockAddress())
+  const [fixedAddress, setFixedAddress] = useState("0x????")
+
+  useEffect(() => {
+    setFixedAddress(genMockAddress())
+  }, [])
 
   function badAdd() {
     actualRef.current.push(ITEM_LABEL)
@@ -30,6 +34,7 @@ function BadCasePanel() {
     actualRef.current = []
     setActualCount(0)
     setDisplayed([])
+    setFixedAddress(genMockAddress())
   }
 
   return (
@@ -77,11 +82,11 @@ function BadCasePanel() {
           <p className="mb-2 text-zinc-500">메모리 주소</p>
           <p className="text-zinc-400">
             Before:{" "}
-            <span className="text-amber-400">{fixedAddress.current}</span>
+            <span className="text-amber-400">{fixedAddress}</span>
           </p>
           <p className="text-zinc-400">
             After:{" "}
-            <span className="text-amber-400">{fixedAddress.current}</span>
+            <span className="text-amber-400">{fixedAddress}</span>
           </p>
           {actualCount > 0 && (
             <p className="mt-2 text-red-400">⚠️ 동일 주소! React가 변화를 못 느낌</p>
@@ -100,8 +105,14 @@ function BadCasePanel() {
 // ── Good Case ─────────────────────────────────────────────────────────────────
 function GoodCasePanel() {
   const [items, setItems] = useState<string[]>([])
-  const prevAddress = useRef(genMockAddress())
-  const [curAddress, setCurAddress] = useState(prevAddress.current)
+  const prevAddress = useRef("0x????")
+  const [curAddress, setCurAddress] = useState("0x????")
+
+  useEffect(() => {
+    const addr = genMockAddress()
+    prevAddress.current = addr
+    setCurAddress(addr)
+  }, [])
 
   function goodAdd() {
     prevAddress.current = curAddress

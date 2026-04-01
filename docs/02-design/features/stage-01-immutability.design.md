@@ -45,7 +45,7 @@ page.tsx → slug별 dynamic import → Stage 01 content
 ```
 src/
 ├── stores/
-│   └── progress-store.ts          [신규] Zustand + persist
+│   └── progress-store.ts          [신규] Zustand + persist (skipHydration: true)
 ├── lib/
 │   └── stage-utils.ts             [신규] resolveStageCompletion() 유틸리티
 ├── features/
@@ -58,10 +58,13 @@ src/
 │   │   ├── card.tsx               [신규] shadcn Card
 │   │   ├── tabs.tsx               [신규] shadcn Tabs (@radix-ui/react-tabs 기반)
 │   │   └── progress.tsx           [신규] shadcn Progress
+│   ├── providers/
+│   │   └── store-hydration.tsx    [신규] 3개 persist 스토어 수동 rehydrate
 │   └── layout/
-│       ├── sidebar.tsx            [수정] Progress 바 + progress-store 연동
+│       ├── sidebar.tsx            [수정] Progress 바 + progress-store 연동 ("use client")
 │       └── stage-layout.tsx       [수정] 스텝퍼 + 학습 완료 버튼
 └── app/
+    ├── layout.tsx                 [수정] StoreHydration 컴포넌트 삽입
     └── stage/[slug]/
         └── page.tsx               [수정] slug별 dynamic import
 ```
@@ -84,7 +87,7 @@ type ProgressStore = {
 }
 
 // localStorage key: 'react-bible-progress'
-// Zustand v5 + persist 미들웨어
+// Zustand v5 + persist 미들웨어 (skipHydration: true — SSR hydration mismatch 방지)
 ```
 
 **Zustand v5 주의사항**:
@@ -127,7 +130,7 @@ export const useProgressStore = create<ProgressStore>()(
       },
       isCompleted: (slug) => get().completedSlugs.includes(slug),
     }),
-    { name: "react-bible-progress" }
+    { name: "react-bible-progress", skipHydration: true }
   )
 )
 ```
@@ -155,17 +158,9 @@ export const useProgressStore = create<ProgressStore>()(
 - Footer 텍스트도 progress-store 기반으로 변경
 
 **SSR Hydration 처리**:
-- `sidebar.tsx`는 이미 `"use client"` 없음 → Server Component
-- progress-store는 CSR 전용 → sidebar에서 직접 사용 불가
-- 해결: Progress 바를 별도 `<ProgressBar />` Client Component로 분리
-
-```
-// src/components/layout/progress-bar.tsx  [신규, "use client"]
-export function ProgressBar() {
-  const { completedSlugs } = useProgressStore()
-  return <Progress value={(completedSlugs.length / 20) * 100} ... />
-}
-```
+- `sidebar.tsx`는 `"use client"` → `useProgressStore` 직접 사용 가능
+- 별도 `<ProgressBar />` Client Component 분리 불필요
+- SSR hydration mismatch는 `skipHydration: true` + `StoreHydration` 컴포넌트로 전역 처리 (§7 참조)
 
 ### 4.3 stage-layout.tsx 변경
 
@@ -285,8 +280,10 @@ function badAdd() {
 function genMockAddress() {
   return `0x${Math.floor(Math.random() * 0xFFFF).toString(16).toUpperCase().padStart(4, '0')}`
 }
-// Bad Case: 항상 동일한 주소 반환 (ref로 고정)
-// Good Case: 새 배열 생성 시마다 새 주소 생성
+// SSR/CSR Math.random() 불일치 방지:
+// useState("0x????") 초기값 고정 + useEffect(() => setState(genMockAddress()), []) 패턴
+// Bad Case: fixedAddress를 useState로 관리, reset 시 새 주소 생성
+// Good Case: prevAddress(useRef) + curAddress(useState) 모두 "0x????" 초기화 후 useEffect에서 설정
 ```
 
 ### 5.3 code-viewer.tsx 레이아웃
@@ -317,36 +314,40 @@ shadcn Tabs 3개:
 
 ## 7. Hydration 처리 전략
 
-`sidebar.tsx`는 Server Component → progress-store 직접 접근 불가.
+**실제 구현된 방식 (설계 대비 변경됨)**
 
-**해결책**: Progress 관련 UI를 `"use client"` Client Component로 분리
+zustand `persist` 미들웨어가 SSR에서 기본값을, 클라이언트에서 localStorage 값을 읽어 HTML 불일치를 발생시킴.
 
-```
-sidebar.tsx (Server Component)
-  ├── <SidebarHeader /> (static)
-  ├── <SidebarProgress /> (Client Component — progress-store 사용)  [신규]
-  ├── <StageList stages={STAGES} /> (static)
-  └── <SidebarFooter stages={STAGES} />
-```
+**적용된 해결책**: 3개 persist 스토어에 `skipHydration: true` + `StoreHydration` 컴포넌트로 수동 rehydrate
 
-`SidebarProgress` 컴포넌트:
 ```typescript
-"use client"
-import { useProgressStore } from "@/stores/progress-store"
-import { Progress } from "@/components/ui/progress"
+// 모든 persist 스토어에 동일하게 적용
+persist(
+  (set, get) => ({ ... }),
+  { name: "react-bible-progress", skipHydration: true }  // SSR에서 localStorage 읽기 건너뜀
+)
+```
 
-export function SidebarProgress() {
-  const { completedSlugs } = useProgressStore()
-  return (
-    <div className="px-4 py-3 border-b border-zinc-800">
-      <Progress value={(completedSlugs.length / 20) * 100} />
-      <p className="mt-1 text-[10px] text-zinc-500 font-mono">
-        {completedSlugs.length} / 20 완료
-      </p>
-    </div>
-  )
+```typescript
+// src/components/providers/store-hydration.tsx
+"use client"
+export function StoreHydration() {
+  useEffect(() => {
+    useProgressStore.persist.rehydrate()      // 클라이언트 마운트 후 localStorage 복원
+    useExplanationStore.persist.rehydrate()
+    useThemeStore.persist.rehydrate()
+  }, [])
+  return null
 }
 ```
+
+`<StoreHydration />`을 `layout.tsx`의 최상단(`<QueryProvider>` 바로 아래)에 삽입.
+
+**적용 대상 스토어**: `progress-store`, `explanation-store`, `theme-store` 3개 모두.
+
+**`sidebar.tsx`**: `"use client"` 컴포넌트로 유지 → `useProgressStore` 직접 사용 가능. 별도 `SidebarProgress` 분리 불필요.
+
+**`playground.tsx` genMockAddress**: `useRef(genMockAddress())` → `useState("0x????")` + `useEffect`로 변경 (Math.random SSR/CSR 불일치 방지)
 
 ---
 

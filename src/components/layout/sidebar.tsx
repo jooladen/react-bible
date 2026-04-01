@@ -50,7 +50,7 @@ function StageItem({
   )
 }
 
-export function Sidebar() {
+export function Sidebar({ onClose }: { onClose?: () => void }) {
   const pathname = usePathname()
   const activeSlug = pathname.split("/stage/")[1] ?? ""
   const { completedSlugs } = useProgressStore()
@@ -63,16 +63,28 @@ export function Sidebar() {
     <aside className="flex h-full w-72 shrink-0 flex-col border-r border-zinc-800 bg-zinc-950">
       {/* Header */}
       <div className="border-b border-zinc-800 px-4 py-4">
-        <div className="flex items-center gap-2">
-          <span className="text-xl">🧬</span>
-          <div>
-            <h1 className="font-mono text-sm font-bold text-white">
-              React Bible
-            </h1>
-            <p className="font-mono text-[10px] text-zinc-500">
-              20 Core Concepts
-            </p>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="text-xl">🧬</span>
+            <div>
+              <h1 className="font-mono text-sm font-bold text-white">
+                React Bible
+              </h1>
+              <p className="font-mono text-[10px] text-zinc-500">
+                20 Core Concepts
+              </p>
+            </div>
           </div>
+          {/* 모바일 닫기 버튼 */}
+          {onClose && (
+            <button
+              onClick={onClose}
+              className="md:hidden flex h-7 w-7 items-center justify-center rounded-md text-zinc-500 hover:bg-zinc-800 hover:text-zinc-200"
+              aria-label="사이드바 닫기"
+            >
+              <span className="text-base leading-none">×</span>
+            </button>
+          )}
         </div>
       </div>
 

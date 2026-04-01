@@ -42,25 +42,31 @@
 ```
 app/layout.tsx
 ├── QueryProvider (TanStack Query)
+├── StoreHydration (persist 스토어 3개 rehydrate — 클라이언트 마운트 후)
 ├── Header
+│   ├── 로고: "react-bible / v1.0.0" (sm 이상) / "RB" (모바일)
 │   └── ExplanationToggle (Zustand ← localStorage)
+│       ├── 텍스트 레이블: hidden sm:inline (모바일 숨김)
 │       └── HintTooltip (? 버튼 + hover tooltip + 첫방문 pulse)
 └── MainLayout (client — 사이드바 토글 상태 관리)
-    ├── Sidebar (조건부 렌더)
+    ├── Backdrop Overlay (모바일 전용, 사이드바 열릴 때 black/60)
+    ├── Sidebar (fixed z-40 모바일 / static 데스크톱)
+    │   ├── Header: React Bible 로고 + × 닫기 버튼 (md:hidden)
+    │   ├── Progress 바 (completedCount / 20)
     │   ├── STAGE_GROUPS × 4 (그룹명 - 서브타이틀)
     │   └── StageItem × 20 (Link + DifficultyBadge)
-    ├── SidebarToggleButton (fixed, ‹/› 아이콘)
+    ├── SidebarToggleButton (fixed › 아이콘 — 사이드바 닫혔을 때만)
     └── main
         └── app/page.tsx → HomeRedirect (localStorage → /stage/[lastSlug])
         └── app/stage/[slug]/page.tsx
             └── StageLayout
                 ├── Stage Header (번호, 제목 : concept 인라인, subtitle)
-                ├── Tab Bar (이론/실험실/코드뷰어)
+                ├── Tab Bar / Stepper (이론/실험실/코드뷰어)
                 ├── Content Area
                 │   ├── theory.tsx    (ExplanationMode 분기)
                 │   ├── playground.tsx (인터렉티브 실험실)
                 │   └── code-viewer.tsx (Syntax Highlight)
-                └── Nav Bar (← 이전 | N/20 | 다음 →, 키보드 ←/→)
+                └── Nav Bar (← 이전 | 학습완료 버튼 | 다음 →, 키보드 ←/→)
 ```
 
 ---
@@ -195,12 +201,13 @@ import { Stage01CodeViewer } from "@/features/stage-01-immutability/code-viewer"
 | `src/lib/stages.ts` | ✅ |
 | `src/stores/explanation-store.ts` | ✅ |
 | `src/components/ui/badge.tsx` | ✅ |
-| `src/components/layout/explanation-toggle.tsx` | ✅ (? 힌트 tooltip + pulse 추가) |
-| `src/components/layout/sidebar.tsx` | ✅ (그룹 서브타이틀 추가) |
+| `src/components/layout/explanation-toggle.tsx` | ✅ (? 힌트 tooltip + pulse + 모바일 텍스트 숨김) |
+| `src/components/layout/sidebar.tsx` | ✅ (그룹 서브타이틀 + onClose prop + 모바일 × 버튼) |
 | `src/components/layout/stage-layout.tsx` | ✅ (concept 인라인, 이전/다음, 키보드 이동, 마지막 방문 저장) |
-| `src/components/layout/main-layout.tsx` | ✅ (신규: 사이드바 토글) |
+| `src/components/layout/main-layout.tsx` | ✅ (신규: 사이드바 토글 + 모바일 오버레이) |
 | `src/components/layout/home-redirect.tsx` | ✅ (신규: 마지막 방문 복귀) |
 | `src/components/providers/query-provider.tsx` | ✅ |
+| `src/components/providers/store-hydration.tsx` | ✅ (신규: 3개 persist 스토어 rehydrate) |
 | `src/app/globals.css` | ✅ |
 | `src/app/layout.tsx` | ✅ (MainLayout 적용) |
 | `src/app/page.tsx` | ✅ (HomeRedirect 적용) |
@@ -211,7 +218,51 @@ import { Stage01CodeViewer } from "@/features/stage-01-immutability/code-viewer"
 
 ---
 
-## 9. 다음 세션 작업 가이드 (Stage별 반복 패턴)
+## 9. 모바일 반응형 설계 (3차 세션 추가)
+
+### 9.1 브레이크포인트 전략
+
+| 구간 | 사이드바 기본 | 사이드바 동작 |
+|------|-------------|-------------|
+| `< md` (768px 미만) | 닫힘 | fixed overlay + backdrop |
+| `≥ md` (768px 이상) | 열림 | static (콘텐츠 밀기) |
+
+### 9.2 MainLayout 모바일 동작
+
+```
+모바일 첫 방문:
+  sidebarOpen = false → 사이드바 숨김, 콘텐츠 전체 너비
+
+› 버튼 클릭:
+  sidebarOpen = true
+  → Sidebar: fixed inset-y-0 left-0 z-40 translate-x-0
+  → Backdrop: fixed inset-0 z-30 bg-black/60
+
+Backdrop 클릭 또는 × 버튼:
+  sidebarOpen = false
+  → Sidebar: translate-x-full (슬라이드 아웃)
+  → Backdrop: 제거
+```
+
+### 9.3 Header 모바일 간소화
+
+| 요소 | 데스크톱 | 모바일 |
+|------|---------|-------|
+| 로고 | `react-bible / v1.0.0` | `RB` |
+| ExplanationToggle 텍스트 | `🟢 초딩모드`, `🔵 개발자모드` | 숨김 (토글 버튼만) |
+| ? 힌트 버튼 | 표시 | 표시 |
+| DarkModeToggle | 표시 | 표시 |
+
+### 9.4 수정된 파일
+
+| 파일 | 변경 내용 |
+|------|-----------|
+| `main-layout.tsx` | `useEffect`로 md 이상 기본 열림, backdrop overlay, sidebarOpen 초기값 false |
+| `sidebar.tsx` | `onClose?: () => void` prop 추가, 헤더에 × 버튼 (md:hidden) |
+| `explanation-toggle.tsx` | `🟢 초딩모드`, `🔵 개발자모드` 텍스트에 `hidden sm:inline` 추가 |
+| `layout.tsx` | 로고 `hidden sm:inline` / `sm:hidden` 분기 |
+
+## 10. 다음 세션 작업 가이드 (Stage별 반복 패턴)
 
 ```
 세션 시작:

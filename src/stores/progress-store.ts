@@ -22,6 +22,6 @@ export const useProgressStore = create<ProgressStore>()(
       },
       isCompleted: (slug) => get().completedSlugs.includes(slug),
     }),
-    { name: "react-bible-progress" }
+    { name: "react-bible-progress", skipHydration: true }
   )
 )

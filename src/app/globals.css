@@ -46,6 +46,26 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Design Ref: §5.2 — .light 클래스 오버라이드 (다크 기본, 라이트 전환용) */
+.light {
+  --background: #ffffff;
+  --foreground: #09090b;
+  --card: #f4f4f5;
+  --card-foreground: #09090b;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #f4f4f5;
+  --accent-foreground: #09090b;
+  --destructive: #ef4444;
+  --ring: #6366f1;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #09090b;
+}
+
 html,
 body {
   height: 100%;

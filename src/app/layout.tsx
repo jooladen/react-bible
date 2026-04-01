@@ -3,7 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import { MainLayout } from "@/components/layout/main-layout"
 import { ExplanationToggle } from "@/components/layout/explanation-toggle"
+import { DarkModeToggle } from "@/components/layout/dark-mode-toggle"
 import { QueryProvider } from "@/components/providers/query-provider"
+import { StoreHydration } from "@/components/providers/store-hydration"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,19 +32,25 @@ export default function RootLayout({
     <html
       lang="ko"
       className={`${geistSans.variable} ${geistMono.variable} h-full`}
+      suppressHydrationWarning
     >
       <body className="flex h-full flex-col bg-zinc-950 text-zinc-100 antialiased">
         <QueryProvider>
+          <StoreHydration />
           {/* Top bar */}
           <header className="flex h-12 shrink-0 items-center justify-between border-b border-zinc-800 bg-zinc-950 px-4">
             <div className="flex items-center gap-2">
               <span className="font-mono text-xs text-zinc-500">
-                react-bible
+                <span className="hidden sm:inline">react-bible</span>
+                <span className="sm:hidden">RB</span>
               </span>
-              <span className="text-zinc-700">/</span>
-              <span className="font-mono text-xs text-zinc-400">v1.0.0</span>
+              <span className="hidden sm:inline text-zinc-700">/</span>
+              <span className="hidden sm:inline font-mono text-xs text-zinc-400">v1.0.0</span>
             </div>
-            <ExplanationToggle />
+            <div className="flex items-center gap-3">
+              <ExplanationToggle />
+              <DarkModeToggle />
+            </div>
           </header>
 
           {/* Main layout */}

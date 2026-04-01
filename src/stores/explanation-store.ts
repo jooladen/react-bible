@@ -17,6 +17,6 @@ export const useExplanationStore = create<ExplanationStore>()(
       setMode: (mode) => set({ mode }),
       toggle: () => set({ mode: get().mode === "child" ? "dev" : "child" }),
     }),
-    { name: "react-bible-explanation-mode" }
+    { name: "react-bible-explanation-mode", skipHydration: true }
   )
 )

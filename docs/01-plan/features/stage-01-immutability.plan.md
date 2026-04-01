@@ -158,11 +158,11 @@
 
 ## 6. 성공 기준 체크리스트
 
-- [ ] `/stage/immutability` 페이지에서 이론/실험실/코드 탭 모두 동작
-- [ ] Bad Case: "추가" 클릭 후 화면이 안 바뀌는 현상 재현 + 설명 표시
-- [ ] Good Case: 올바른 불변성 업데이트로 화면 즉시 반영
-- [ ] 메모리 주소 시각화: Bad(빨강, 동일 주소) / Good(초록, 새 주소)
-- [ ] Immer `produce` 체험 동작
-- [ ] "학습 완료" 버튼 클릭 → 사이드바 Progress 바 갱신
-- [ ] 페이지 새로고침 후에도 진도 유지 (localStorage persist)
-- [ ] TypeScript 에러 0건, 빌드 통과
+- [x] `/stage/immutability` 페이지에서 이론/실험실/코드 탭 모두 동작
+- [x] Bad Case: "추가" 클릭 후 화면이 안 바뀌는 현상 재현 + 설명 표시
+- [x] Good Case: 올바른 불변성 업데이트로 화면 즉시 반영
+- [x] 메모리 주소 시각화: Bad(빨강, 동일 주소) / Good(초록, 새 주소)
+- [x] Immer `produce` 체험 동작
+- [x] "학습 완료" 버튼 클릭 → 사이드바 Progress 바 갱신
+- [x] 페이지 새로고침 후에도 진도 유지 (localStorage persist)
+- [x] TypeScript 에러 0건, 빌드 통과

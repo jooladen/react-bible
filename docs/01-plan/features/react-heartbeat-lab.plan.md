@@ -46,7 +46,7 @@ Next.js App Router 기반, 전자책 예제 + 포트폴리오(Dev-Nexus) 겸용.
 
 | # | 주제 | 난이도 | 상태 |
 |---|------|--------|------|
-| 01 | 불변성 & Immer | 🟢 쉬움 | todo |
+| 01 | 불변성 & Immer | 🟢 쉬움 | done |
 | 02 | Rendering & Reconciliation | 🟡 보통 | todo |
 | 03 | Component Lifecycle | 🟢 쉬움 | todo |
 | 04 | Hooks 기초 (useState/useEffect) | 🟢 쉬움 | todo |
@@ -106,6 +106,14 @@ Next.js App Router 기반, 전자책 예제 + 포트폴리오(Dev-Nexus) 겸용.
 - [x] 키보드 화살표(←/→) stage 이동
 - [x] 마지막 방문 stage 기억 (localStorage, 재방문 시 복귀)
 
+**[3차 세션] 모바일 반응형 레이아웃**
+- [x] 사이드바 모바일 기본값 닫힘 (데스크톱 md 이상에서만 기본 열림)
+- [x] 사이드바 모바일 오버레이 방식 (fixed z-40, 콘텐츠 밀기 없음)
+- [x] 사이드바 열릴 때 backdrop overlay (black/60, 클릭 시 닫기)
+- [x] 사이드바 헤더 내 × 닫기 버튼 (모바일 전용, md:hidden)
+- [x] ExplanationToggle 텍스트 모바일 숨김 (hidden sm:inline — 토글 버튼만 표시)
+- [x] Header 로고 모바일 축약 ("react-bible / v1.0.0" → "RB")
+
 ### ⏳ 다음 세션부터 (1 Stage씩)
 
 - [ ] Stage 01~20 각각: theory.tsx + playground.tsx + code-viewer.tsx
@@ -138,7 +146,7 @@ Next.js App Router 기반, 전자책 예제 + 포트폴리오(Dev-Nexus) 겸용.
 | `src/components/layout/sidebar.tsx` | Phase별 20단계 사이드바 (그룹 서브타이틀 포함) |
 | `src/components/layout/explanation-toggle.tsx` | 🟢/🔵 토글 스위치 + ? 힌트 tooltip |
 | `src/components/layout/stage-layout.tsx` | 탭 레이아웃 + 이전/다음 버튼 + 키보드 이동 |
-| `src/components/layout/main-layout.tsx` | 사이드바 토글 클라이언트 컴포넌트 |
+| `src/components/layout/main-layout.tsx` | 사이드바 토글 + 모바일 오버레이/backdrop |
 | `src/components/layout/home-redirect.tsx` | 마지막 방문 stage 복귀 리다이렉트 |
 | `src/app/stage/[slug]/page.tsx` | 동적 Stage 라우트 (Next.js 15+) |
 | `docs/stages/PROGRESS.md` | 세션 간 진행 체크리스트 |

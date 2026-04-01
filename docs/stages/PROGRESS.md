@@ -17,7 +17,7 @@
 
 ## Phase 1: 입력과 기초 (데이터의 본질)
 
-- [ ] **Stage 01** — 불변성 & Immer `slug: immutability` 🟢 쉬움
+- [x] **Stage 01** — 불변성 & Immer `slug: immutability` 🟢 쉬움
 - [ ] **Stage 02** — Rendering & Reconciliation `slug: rendering` 🟡 보통
 - [ ] **Stage 03** — Component Lifecycle `slug: lifecycle` 🟢 쉬움
 - [ ] **Stage 04** — Hooks 기초 (useState/useEffect) `slug: hooks-basic` 🟢 쉬움
@@ -53,11 +53,11 @@
 
 | Phase | 완료 | 전체 | 진행률 |
 |-------|------|------|--------|
-| Phase 1: 입력과 기초 | 0 | 5 | 0% |
+| Phase 1: 입력과 기초 | 1 | 5 | 20% |
 | Phase 2: 가공과 최적화 | 0 | 5 | 0% |
 | Phase 3: 확장과 연결 | 0 | 5 | 0% |
 | Phase 4: 운영과 인프라 | 0 | 5 | 0% |
-| **전체** | **0** | **20** | **0%** |
+| **전체** | **1** | **20** | **5%** |
 
 ---
 

@@ -27,7 +27,7 @@ export function ExplanationToggle() {
   return (
     <div className="flex items-center gap-2 select-none">
       <span
-        className={`text-xs font-medium transition-colors ${
+        className={`hidden sm:inline text-xs font-medium transition-colors ${
           !isDev ? "text-green-400" : "text-zinc-500"
         }`}
       >
@@ -49,7 +49,7 @@ export function ExplanationToggle() {
       </button>
 
       <span
-        className={`text-xs font-medium transition-colors ${
+        className={`hidden sm:inline text-xs font-medium transition-colors ${
           isDev ? "text-indigo-400" : "text-zinc-500"
         }`}
       >
