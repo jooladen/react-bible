@@ -46,24 +46,32 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* Design Ref: §5.2 — .light 클래스 오버라이드 (다크 기본, 라이트 전환용) */
+/* Design Ref: §5.2 — Clean Minimal (라이트 테마) */
 .light {
   --background: #ffffff;
-  --foreground: #09090b;
-  --card: #f4f4f5;
-  --card-foreground: #09090b;
-  --border: #e4e4e7;
-  --input: #e4e4e7;
-  --primary: #6366f1;
+  --foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --border: #e5e5e5;
+  --input: #e5e5e5;
+  --primary: #4f46e5;
   --primary-foreground: #ffffff;
-  --muted: #f4f4f5;
-  --muted-foreground: #71717a;
-  --accent: #f4f4f5;
-  --accent-foreground: #09090b;
-  --destructive: #ef4444;
-  --ring: #6366f1;
-  --secondary: #f4f4f5;
-  --secondary-foreground: #09090b;
+  --muted: #f5f5f5;
+  --muted-foreground: #737373;
+  --accent: #f0f0f0;
+  --accent-foreground: #0a0a0a;
+  --destructive: #dc2626;
+  --ring: #4f46e5;
+  --secondary: #f5f5f5;
+  --secondary-foreground: #0a0a0a;
+}
+
+/* Tailwind v4 custom variant — light:xxx 클래스 사용 가능하게 */
+@custom-variant light (&:is(.light *));
+
+/* 라이트 모드 — 사이드바 배경만 구분 */
+.light aside {
+  background-color: #fafafa !important;
 }
 
 html,

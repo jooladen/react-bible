@@ -34,18 +34,18 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full`}
       suppressHydrationWarning
     >
-      <body className="flex h-full flex-col bg-zinc-950 text-zinc-100 antialiased">
+      <body className="flex h-full flex-col bg-background text-foreground antialiased">
         <QueryProvider>
           <StoreHydration />
           {/* Top bar */}
-          <header className="flex h-12 shrink-0 items-center justify-between border-b border-zinc-800 bg-zinc-950 px-4">
+          <header className="flex h-12 shrink-0 items-center justify-between border-b border-border bg-background px-4">
             <div className="flex items-center gap-2">
-              <span className="font-mono text-xs text-zinc-500">
+              <span className="font-mono text-xs text-muted-foreground">
                 <span className="hidden sm:inline">react-bible</span>
                 <span className="sm:hidden">RB</span>
               </span>
-              <span className="hidden sm:inline text-zinc-700">/</span>
-              <span className="hidden sm:inline font-mono text-xs text-zinc-400">v1.0.0</span>
+              <span className="hidden sm:inline text-muted-foreground/40">/</span>
+              <span className="hidden sm:inline font-mono text-xs text-muted-foreground">v1.0.0</span>
             </div>
             <div className="flex items-center gap-3">
               <ExplanationToggle />

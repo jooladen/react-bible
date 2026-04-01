@@ -8,16 +8,16 @@ const difficultyConfig: Record<
   easy: {
     label: "🟢 쉬움",
     className:
-      "bg-green-950/60 text-green-300 border border-green-800/50",
+      "bg-green-950/60 text-green-300 border border-green-800/50 light:bg-green-50 light:text-green-700 light:border-green-200",
   },
   medium: {
     label: "🟡 보통",
     className:
-      "bg-yellow-950/60 text-yellow-300 border border-yellow-800/50",
+      "bg-yellow-950/60 text-yellow-300 border border-yellow-800/50 light:bg-yellow-50 light:text-yellow-700 light:border-yellow-200",
   },
   hard: {
     label: "🔴 어려움",
-    className: "bg-red-950/60 text-red-300 border border-red-800/50",
+    className: "bg-red-950/60 text-red-300 border border-red-800/50 light:bg-red-50 light:text-red-700 light:border-red-200",
   },
 }
 

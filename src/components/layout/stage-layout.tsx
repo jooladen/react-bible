@@ -69,21 +69,21 @@ export function StageLayout({
   return (
     <div className="flex h-full flex-col">
       {/* Stage header */}
-      <div className="border-b border-zinc-800 bg-zinc-950/50 px-6 py-4">
+      <div className="border-b border-border bg-background px-6 py-4">
         <div className="flex items-start justify-between">
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-mono text-xs text-zinc-500">
+              <span className="font-mono text-xs text-muted-foreground">
                 {String(stage.id).padStart(2, "0")}
               </span>
               <DifficultyBadge difficulty={stage.difficulty} />
-              <span className="text-xs text-zinc-500">{stage.groupName}</span>
+              <span className="text-xs text-muted-foreground">{stage.groupName}</span>
             </div>
             <div className="mt-1 flex flex-wrap items-baseline gap-x-1.5">
-              <h2 className="text-xl font-bold text-white">{stage.title}</h2>
+              <h2 className="text-xl font-bold text-foreground">{stage.title}</h2>
               <span className="text-sm text-zinc-400">: {stage.concept}</span>
             </div>
-            <p className="mt-0.5 text-sm text-zinc-500">{stage.subtitle}</p>
+            <p className="mt-0.5 text-sm text-muted-foreground">{stage.subtitle}</p>
           </div>
         </div>
 
@@ -99,20 +99,20 @@ export function StageLayout({
                   className={cn(
                     "flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-all",
                     isActive
-                      ? "bg-indigo-500/20 text-indigo-300"
+                      ? "bg-indigo-500/20 text-indigo-300 light:bg-zinc-100 light:text-zinc-900"
                       : isPast
-                        ? "text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200"
-                        : "text-zinc-600 hover:bg-zinc-800 hover:text-zinc-400"
+                        ? "text-muted-foreground hover:bg-accent hover:text-foreground"
+                        : "text-muted-foreground/50 hover:bg-accent hover:text-muted-foreground"
                   )}
                 >
                   <span
                     className={cn(
                       "flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-bold",
                       isActive
-                        ? "bg-indigo-500 text-white"
+                        ? "bg-indigo-500 light:bg-zinc-800 text-white"
                         : isPast
-                          ? "bg-zinc-600 text-zinc-200"
-                          : "border border-zinc-700 text-zinc-600"
+                          ? "bg-muted text-muted-foreground"
+                          : "border border-border text-muted-foreground/50"
                     )}
                   >
                     {i + 1}
@@ -123,7 +123,7 @@ export function StageLayout({
                   <div
                     className={cn(
                       "h-px w-6 shrink-0",
-                      isPast ? "bg-zinc-600" : "bg-zinc-800"
+                      isPast ? "bg-muted-foreground/30" : "bg-border"
                     )}
                   />
                 )}
@@ -148,10 +148,10 @@ export function StageLayout({
               <div className="flex h-full items-center justify-center">
                 <div className="text-center">
                   <p className="text-4xl">🚧</p>
-                  <p className="mt-2 text-sm text-zinc-500">
+                  <p className="mt-2 text-sm text-muted-foreground">
                     이 섹션은 다음 세션에서 구현됩니다
                   </p>
-                  <p className="mt-1 font-mono text-xs text-zinc-600">
+                  <p className="mt-1 font-mono text-xs text-muted-foreground">
                     /pdca do {stage.slug}
                   </p>
                 </div>
@@ -162,11 +162,11 @@ export function StageLayout({
       </div>
 
       {/* 이전 / 다음 내비게이션 + 학습 완료 버튼 */}
-      <div className="flex shrink-0 items-center justify-between border-t border-zinc-800 bg-zinc-950/50 px-6 py-3">
+      <div className="flex shrink-0 items-center justify-between border-t border-border bg-background px-6 py-3">
         {prevStage ? (
           <button
             onClick={() => router.push(`/stage/${prevStage.slug}`)}
-            className="flex items-center gap-2 rounded-md px-3 py-1.5 text-sm text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-zinc-200"
+            className="flex items-center gap-2 rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
             title="← 이전 (ArrowLeft)"
           >
             <span>←</span>
@@ -193,7 +193,7 @@ export function StageLayout({
         {nextStage ? (
           <button
             onClick={() => router.push(`/stage/${nextStage.slug}`)}
-            className="flex items-center gap-2 rounded-md px-3 py-1.5 text-sm text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-zinc-200"
+            className="flex items-center gap-2 rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
             title="다음 → (ArrowRight)"
           >
             <span className="max-w-[120px] truncate">{nextStage.title}</span>

@@ -1,0 +1,239 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]: react-bible
+      - generic [ref=e5]: /
+      - generic [ref=e6]: v1.0.0
+    - generic [ref=e7]:
+      - generic [ref=e8]:
+        - generic [ref=e9]: 🟢 초딩모드
+        - 'switch "설명 모드: 초딩" [active] [ref=e283]'
+        - generic [ref=e12]: 🔵 개발자모드
+        - button "?" [ref=e14]
+      - button "다크 모드로 전환" [ref=e106]:
+        - img [ref=e107]
+  - generic [ref=e18]:
+    - complementary [ref=e114]:
+      - generic [ref=e117]:
+        - generic [ref=e118]: 🧬
+        - generic [ref=e119]:
+          - heading "React Bible" [level=1] [ref=e120]
+          - paragraph [ref=e121]: 20 Core Concepts
+      - generic [ref=e122]:
+        - progressbar [ref=e123]
+        - paragraph [ref=e125]: 0 / 20 완료
+      - navigation [ref=e126]:
+        - generic [ref=e127]:
+          - generic [ref=e128]:
+            - generic [ref=e129]:
+              - paragraph [ref=e130]: Phase 1
+              - paragraph [ref=e131]: 입력과 기초 - 데이터의 본질
+            - generic [ref=e132]: 0/5
+          - generic [ref=e133]:
+            - link "01 불변성 & Immer 🟢 쉬움" [ref=e134] [cursor=pointer]:
+              - /url: /stage/immutability
+              - generic [ref=e135]: "01"
+              - generic [ref=e136]:
+                - generic [ref=e137]: 불변성 & Immer
+                - generic [ref=e139]: 🟢 쉬움
+            - link "02 Rendering & Reconciliation 🟡 보통" [ref=e140] [cursor=pointer]:
+              - /url: /stage/rendering
+              - generic [ref=e141]: "02"
+              - generic [ref=e142]:
+                - generic [ref=e143]: Rendering & Reconciliation
+                - generic [ref=e145]: 🟡 보통
+            - link "03 Component Lifecycle 🟢 쉬움" [ref=e146] [cursor=pointer]:
+              - /url: /stage/lifecycle
+              - generic [ref=e147]: "03"
+              - generic [ref=e148]:
+                - generic [ref=e149]: Component Lifecycle
+                - generic [ref=e151]: 🟢 쉬움
+            - link "04 Hooks 기초 🟢 쉬움" [ref=e152] [cursor=pointer]:
+              - /url: /stage/hooks-basic
+              - generic [ref=e153]: "04"
+              - generic [ref=e154]:
+                - generic [ref=e155]: Hooks 기초
+                - generic [ref=e157]: 🟢 쉬움
+            - link "05 Event Bubbling & Capture 🟡 보통" [ref=e158] [cursor=pointer]:
+              - /url: /stage/event-bubbling
+              - generic [ref=e159]: "05"
+              - generic [ref=e160]:
+                - generic [ref=e161]: Event Bubbling & Capture
+                - generic [ref=e163]: 🟡 보통
+        - generic [ref=e164]:
+          - generic [ref=e165]:
+            - generic [ref=e166]:
+              - paragraph [ref=e167]: Phase 2
+              - paragraph [ref=e168]: 가공과 최적화 - 불필요한 연산 걷어내기
+            - generic [ref=e169]: 0/5
+          - generic [ref=e170]:
+            - link "06 Hooks & Closure 🔴 어려움" [ref=e171] [cursor=pointer]:
+              - /url: /stage/hooks-closure
+              - generic [ref=e172]: "06"
+              - generic [ref=e173]:
+                - generic [ref=e174]: Hooks & Closure
+                - generic [ref=e176]: 🔴 어려움
+            - link "07 Memoization 🟡 보통" [ref=e177] [cursor=pointer]:
+              - /url: /stage/memoization
+              - generic [ref=e178]: "07"
+              - generic [ref=e179]:
+                - generic [ref=e180]: Memoization
+                - generic [ref=e182]: 🟡 보통
+            - link "08 Design Systems 🟡 보통" [ref=e183] [cursor=pointer]:
+              - /url: /stage/design-systems
+              - generic [ref=e184]: "08"
+              - generic [ref=e185]:
+                - generic [ref=e186]: Design Systems
+                - generic [ref=e188]: 🟡 보통
+            - link "09 CSS-in-JS vs Tailwind 🟢 쉬움" [ref=e189] [cursor=pointer]:
+              - /url: /stage/css-strategies
+              - generic [ref=e190]: "09"
+              - generic [ref=e191]:
+                - generic [ref=e192]: CSS-in-JS vs Tailwind
+                - generic [ref=e194]: 🟢 쉬움
+            - link "10 Performance Profiling 🔴 어려움" [ref=e195] [cursor=pointer]:
+              - /url: /stage/profiling
+              - generic [ref=e196]: "10"
+              - generic [ref=e197]:
+                - generic [ref=e198]: Performance Profiling
+                - generic [ref=e200]: 🔴 어려움
+        - generic [ref=e201]:
+          - generic [ref=e202]:
+            - generic [ref=e203]:
+              - paragraph [ref=e204]: Phase 3
+              - paragraph [ref=e205]: 확장과 연결 - 덩치가 커지는 단계
+            - generic [ref=e206]: 0/5
+          - generic [ref=e207]:
+            - link "11 Context & Prop Drilling 🟡 보통" [ref=e208] [cursor=pointer]:
+              - /url: /stage/context
+              - generic [ref=e209]: "11"
+              - generic [ref=e210]:
+                - generic [ref=e211]: Context & Prop Drilling
+                - generic [ref=e213]: 🟡 보통
+            - link "12 State Management 🟡 보통" [ref=e214] [cursor=pointer]:
+              - /url: /stage/state-management
+              - generic [ref=e215]: "12"
+              - generic [ref=e216]:
+                - generic [ref=e217]: State Management
+                - generic [ref=e219]: 🟡 보통
+            - link "13 Async State Handling 🔴 어려움" [ref=e220] [cursor=pointer]:
+              - /url: /stage/async-state
+              - generic [ref=e221]: "13"
+              - generic [ref=e222]:
+                - generic [ref=e223]: Async State Handling
+                - generic [ref=e225]: 🔴 어려움
+            - link "14 Server State & Caching 🟡 보통" [ref=e226] [cursor=pointer]:
+              - /url: /stage/server-state
+              - generic [ref=e227]: "14"
+              - generic [ref=e228]:
+                - generic [ref=e229]: Server State & Caching
+                - generic [ref=e231]: 🟡 보통
+            - link "15 Fine-grained Reactivity 🔴 어려움" [ref=e232] [cursor=pointer]:
+              - /url: /stage/signals
+              - generic [ref=e233]: "15"
+              - generic [ref=e234]:
+                - generic [ref=e235]: Fine-grained Reactivity
+                - generic [ref=e237]: 🔴 어려움
+        - generic [ref=e238]:
+          - generic [ref=e239]:
+            - generic [ref=e240]:
+              - paragraph [ref=e241]: Phase 4
+              - paragraph [ref=e242]: 운영과 인프라 - 장인의 마무리
+            - generic [ref=e243]: 0/5
+          - generic [ref=e244]:
+            - link "16 Testing Strategy 🟡 보통" [ref=e245] [cursor=pointer]:
+              - /url: /stage/testing
+              - generic [ref=e246]: "16"
+              - generic [ref=e247]:
+                - generic [ref=e248]: Testing Strategy
+                - generic [ref=e250]: 🟡 보통
+            - link "17 Hydration & SSR 🔴 어려움" [ref=e251] [cursor=pointer]:
+              - /url: /stage/hydration
+              - generic [ref=e252]: "17"
+              - generic [ref=e253]:
+                - generic [ref=e254]: Hydration & SSR
+                - generic [ref=e256]: 🔴 어려움
+            - link "18 Bundle Optimization 🔴 어려움" [ref=e257] [cursor=pointer]:
+              - /url: /stage/bundle-optimization
+              - generic [ref=e258]: "18"
+              - generic [ref=e259]:
+                - generic [ref=e260]: Bundle Optimization
+                - generic [ref=e262]: 🔴 어려움
+            - link "19 Web Workers 🔴 어려움" [ref=e263] [cursor=pointer]:
+              - /url: /stage/web-workers
+              - generic [ref=e264]: "19"
+              - generic [ref=e265]:
+                - generic [ref=e266]: Web Workers
+                - generic [ref=e268]: 🔴 어려움
+            - link "20 Micro Frontends 🔴 어려움" [ref=e269] [cursor=pointer]:
+              - /url: /stage/mfe
+              - generic [ref=e270]: "20"
+              - generic [ref=e271]:
+                - generic [ref=e272]: Micro Frontends
+                - generic [ref=e274]: 🔴 어려움
+      - paragraph [ref=e276]: 0 / 20 completed
+    - main [ref=e19]:
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - generic [ref=e24]:
+            - generic [ref=e25]:
+              - generic [ref=e26]: "01"
+              - generic [ref=e27]: 🟢 쉬움
+              - generic [ref=e28]: 입력과 기초
+            - generic [ref=e29]:
+              - heading "불변성 & Immer" [level=2] [ref=e30]
+              - generic [ref=e31]: ": 모든 시작은 '새 주소 발급'입니다."
+            - paragraph [ref=e32]: 데이터의 본질
+          - generic [ref=e33]:
+            - button "1 이론" [ref=e35]:
+              - generic [ref=e36]: "1"
+              - generic [ref=e37]: 이론
+            - button "2 실험실" [ref=e40]:
+              - generic [ref=e41]: "2"
+              - generic [ref=e42]: 실험실
+            - button "3 코드 뷰어" [ref=e45]:
+              - generic [ref=e46]: "3"
+              - generic [ref=e47]: 코드 뷰어
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - heading "불변성 & Immer 이론" [level=3] [ref=e52]
+            - paragraph [ref=e53]: 🟢 초딩 모드 — 쉬운 비유로 핵심 개념 이해
+          - generic [ref=e54]:
+            - generic [ref=e55]:
+              - generic [ref=e57]:
+                - generic [ref=e58]: 📦
+                - generic [ref=e59]: 불변성이란?
+              - generic [ref=e61]:
+                - paragraph [ref=e62]: 택배 박스를 생각해봐요. React는 택배를 주소로 구별해요.
+                - paragraph [ref=e63]: 같은 박스에 물건을 넣으면 주소가 그대로예요. React가 변화를 못 느껴요!
+                - paragraph [ref=e284]: 새 박스를 만들어서 물건을 옮겨야 새 주소 = 새 택배가 돼요.
+                - generic [ref=e285]: // ❌ 같은 주소 arr.push(item) // ✅ 새 주소 [...arr, item]
+            - generic [ref=e66]:
+              - generic [ref=e68]:
+                - generic [ref=e69]: ⚛️
+                - generic [ref=e70]: React에서 왜 중요한가?
+              - generic [ref=e72]:
+                - paragraph [ref=e73]: React는 화면을 다시 그릴지 말지 주소를 비교해서 결정해요.
+                - paragraph [ref=e74]: 같은 박스(주소)면 "어, 안 바뀌었네" 하고 화면을 안 바꿔요.
+                - paragraph [ref=e286]: 새 박스(새 주소)여야 "새 택배 왔다!" 하고 화면을 다시 그려요.
+                - generic [ref=e287]: 💡 그래서 useState에서 배열을 수정할 때 반드시 새 배열을 만들어야 해요!
+            - generic [ref=e77]:
+              - generic [ref=e79]:
+                - generic [ref=e80]: ✨
+                - generic [ref=e81]: Immer란?
+              - generic [ref=e83]:
+                - paragraph [ref=e84]: Immer는 마법사 같은 도구예요.
+                - paragraph [ref=e85]: "\"그냥 막 고쳐봐~\" 하면 Immer가 뒤에서 새 박스에 복사해서 돌려줘요."
+                - generic [ref=e86]: "// 마음대로 수정해도 OK! produce(state, draft => { draft.todos.push(item) })"
+          - generic [ref=e87]:
+            - paragraph [ref=e88]: 🎯 핵심 요약
+            - paragraph [ref=e89]: React는 주소로 비교해요. 같은 박스면 화면이 안 바뀌어요. 항상 새 박스(새 배열/객체)를 만들어야 해요.
+        - generic [ref=e90]:
+          - button "✅ 학습 완료" [ref=e91]
+          - button "Rendering & Reconciliation →" [ref=e92]:
+            - generic [ref=e93]: Rendering & Reconciliation
+            - generic [ref=e94]: →
+    - button "‹" [ref=e281]
+  - button "Open Next.js Dev Tools" [ref=e101] [cursor=pointer]:
+    - img [ref=e102]
+  - alert [ref=e282]

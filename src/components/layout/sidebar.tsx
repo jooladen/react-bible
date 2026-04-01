@@ -25,14 +25,14 @@ function StageItem({
       className={cn(
         "group flex items-start gap-2 rounded-md px-3 py-2 text-sm transition-all",
         isActive
-          ? "bg-indigo-500/15 text-indigo-300 border-l-2 border-indigo-500"
-          : "text-zinc-400 hover:bg-zinc-800/60 hover:text-zinc-200 border-l-2 border-transparent"
+          ? "bg-indigo-500/15 text-indigo-300 light:bg-zinc-100 light:text-zinc-900 border-l-2 border-indigo-500 light:border-zinc-400"
+          : "text-zinc-400 hover:bg-accent/60 hover:text-foreground border-l-2 border-transparent"
       )}
     >
       <span
         className={cn(
           "mt-0.5 shrink-0 font-mono text-xs font-semibold w-5 text-right",
-          isActive ? "text-indigo-400" : "text-zinc-600 group-hover:text-zinc-500"
+          isActive ? "text-indigo-400 light:text-zinc-600" : "text-muted-foreground group-hover:text-muted-foreground"
         )}
       >
         {String(stage.id).padStart(2, "0")}
@@ -60,17 +60,17 @@ export function Sidebar({ onClose }: { onClose?: () => void }) {
   ).length
 
   return (
-    <aside className="flex h-full w-72 shrink-0 flex-col border-r border-zinc-800 bg-zinc-950">
+    <aside className="flex h-full w-72 shrink-0 flex-col border-r border-border bg-background">
       {/* Header */}
-      <div className="border-b border-zinc-800 px-4 py-4">
+      <div className="border-b border-border px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-xl">🧬</span>
             <div>
-              <h1 className="font-mono text-sm font-bold text-white">
+              <h1 className="font-mono text-sm font-bold text-foreground">
                 React Bible
               </h1>
-              <p className="font-mono text-[10px] text-zinc-500">
+              <p className="font-mono text-[10px] text-muted-foreground">
                 20 Core Concepts
               </p>
             </div>
@@ -79,7 +79,7 @@ export function Sidebar({ onClose }: { onClose?: () => void }) {
           {onClose && (
             <button
               onClick={onClose}
-              className="md:hidden flex h-7 w-7 items-center justify-center rounded-md text-zinc-500 hover:bg-zinc-800 hover:text-zinc-200"
+              className="md:hidden flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground hover:bg-accent hover:text-foreground"
               aria-label="사이드바 닫기"
             >
               <span className="text-base leading-none">×</span>
@@ -89,12 +89,12 @@ export function Sidebar({ onClose }: { onClose?: () => void }) {
       </div>
 
       {/* Progress bar */}
-      <div className="border-b border-zinc-800 px-4 py-3">
+      <div className="border-b border-border px-4 py-3">
         <Progress
           value={(completedCount / STAGES.length) * 100}
           className="h-1.5"
         />
-        <p className="mt-1.5 font-mono text-[10px] text-zinc-500">
+        <p className="mt-1.5 font-mono text-[10px] text-muted-foreground">
           {completedCount} / {STAGES.length} 완료
         </p>
       </div>
@@ -112,14 +112,14 @@ export function Sidebar({ onClose }: { onClose?: () => void }) {
               {/* Group header */}
               <div className="flex items-center justify-between px-4 pb-1 pt-3">
                 <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-zinc-500">
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
                     Phase {group.id}
                   </p>
                   <p className="text-xs font-medium text-zinc-400">
                     {group.name} - {group.subtitle}
                   </p>
                 </div>
-                <span className="font-mono text-[10px] text-zinc-600">
+                <span className="font-mono text-[10px] text-muted-foreground">
                   {doneCount}/{stages.length}
                 </span>
               </div>
@@ -141,8 +141,8 @@ export function Sidebar({ onClose }: { onClose?: () => void }) {
       </nav>
 
       {/* Footer */}
-      <div className="border-t border-zinc-800 px-4 py-3">
-        <p className="font-mono text-[10px] text-zinc-600">
+      <div className="border-t border-border px-4 py-3">
+        <p className="font-mono text-[10px] text-muted-foreground">
           {completedCount} / {STAGES.length} completed
         </p>
       </div>

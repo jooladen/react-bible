@@ -38,14 +38,14 @@ function BadCasePanel() {
   }
 
   return (
-    <div className="rounded-lg border border-red-900/50 bg-red-950/10 p-5">
+    <div className="rounded-lg border border-red-900/50 bg-red-950/10 p-5 light:border-red-200 light:bg-red-50/40">
       <div className="mb-4 flex items-center justify-between">
-        <h4 className="flex items-center gap-2 font-semibold text-red-400">
+        <h4 className="flex items-center gap-2 font-semibold text-red-400 light:text-red-600">
           <span>🔴</span> Bad Case: 직접 변이 (push)
         </h4>
         <button
           onClick={reset}
-          className="rounded px-2 py-0.5 text-xs text-zinc-600 hover:bg-zinc-800 hover:text-zinc-300"
+          className="rounded px-2 py-0.5 text-xs text-muted-foreground hover:bg-accent hover:text-foreground"
         >
           초기화
         </button>
@@ -56,22 +56,22 @@ function BadCasePanel() {
         <div className="space-y-3">
           <button
             onClick={badAdd}
-            className="rounded-md bg-red-900/40 px-4 py-2 text-sm font-medium text-red-300 transition-colors hover:bg-red-900/60"
+            className="rounded-md bg-red-900/40 px-4 py-2 text-sm font-medium text-red-300 transition-colors hover:bg-red-900/60 light:bg-red-100 light:text-red-700 light:hover:bg-red-200"
           >
             + 추가 (push)
           </button>
           <div className="space-y-1 text-sm">
-            <p className="text-zinc-500">화면 목록 (displayed):</p>
-            <p className="font-mono text-zinc-300">
+            <p className="text-muted-foreground">화면 목록 (displayed):</p>
+            <p className="font-mono text-foreground">
               [{displayed.map((i) => `"${i}"`).join(", ")}]
             </p>
-            <p className="mt-2 text-zinc-500">실제 배열 (ref):</p>
-            <p className="font-mono text-zinc-300">
+            <p className="mt-2 text-muted-foreground">실제 배열 (ref):</p>
+            <p className="font-mono text-foreground">
               [{Array(actualCount).fill(`"${ITEM_LABEL}"`).join(", ")}]
             </p>
           </div>
           {actualCount > 0 && displayed.length === 0 && (
-            <div className="rounded-md bg-red-950/40 border border-red-800/40 p-2 text-xs text-red-300">
+            <div className="rounded-md bg-red-950/40 border border-red-800/40 p-2 text-xs text-red-300 light:bg-red-50 light:border-red-200 light:text-red-600">
               ⚠️ 배열은 바뀌었는데 화면이 안 바뀌었어요!
             </div>
           )}
@@ -129,14 +129,14 @@ function GoodCasePanel() {
   }
 
   return (
-    <div className="rounded-lg border border-green-900/50 bg-green-950/10 p-5">
+    <div className="rounded-lg border border-green-900/50 bg-green-950/10 p-5 light:border-green-200 light:bg-green-50/40">
       <div className="mb-4 flex items-center justify-between">
-        <h4 className="flex items-center gap-2 font-semibold text-green-400">
+        <h4 className="flex items-center gap-2 font-semibold text-green-400 light:text-green-600">
           <span>🟢</span> Good Case: 스프레드 연산자
         </h4>
         <button
           onClick={reset}
-          className="rounded px-2 py-0.5 text-xs text-zinc-600 hover:bg-zinc-800 hover:text-zinc-300"
+          className="rounded px-2 py-0.5 text-xs text-muted-foreground hover:bg-accent hover:text-foreground"
         >
           초기화
         </button>
@@ -147,18 +147,18 @@ function GoodCasePanel() {
         <div className="space-y-3">
           <button
             onClick={goodAdd}
-            className="rounded-md bg-green-900/40 px-4 py-2 text-sm font-medium text-green-300 transition-colors hover:bg-green-900/60"
+            className="rounded-md bg-green-900/40 px-4 py-2 text-sm font-medium text-green-300 transition-colors hover:bg-green-900/60 light:bg-green-100 light:text-green-700 light:hover:bg-green-200"
           >
             + 추가 ([...prev, item])
           </button>
           <div className="space-y-1 text-sm">
-            <p className="text-zinc-500">화면 목록:</p>
-            <p className="font-mono text-zinc-300">
+            <p className="text-muted-foreground">화면 목록:</p>
+            <p className="font-mono text-foreground">
               [{items.map((i) => `"${i}"`).join(", ")}]
             </p>
           </div>
           {items.length > 0 && (
-            <div className="rounded-md bg-green-950/40 border border-green-800/40 p-2 text-xs text-green-300">
+            <div className="rounded-md bg-green-950/40 border border-green-800/40 p-2 text-xs text-green-300 light:bg-green-50 light:border-green-200 light:text-green-600">
               ✅ 새 배열 → 새 주소 → 화면 즉시 갱신!
             </div>
           )}
@@ -219,14 +219,14 @@ function ImmerPanel() {
       : 0
 
   return (
-    <div className="rounded-lg border border-indigo-900/50 bg-indigo-950/10 p-5">
+    <div className="rounded-lg border border-indigo-900/50 bg-indigo-950/10 p-5 light:border-zinc-200 light:bg-zinc-50/60">
       <div className="mb-4 flex items-center justify-between">
-        <h4 className="flex items-center gap-2 font-semibold text-indigo-400">
+        <h4 className="flex items-center gap-2 font-semibold text-indigo-400 light:text-zinc-700">
           <span>✨</span> Immer 체험: produce()
         </h4>
         <button
           onClick={reset}
-          className="rounded px-2 py-0.5 text-xs text-zinc-600 hover:bg-zinc-800 hover:text-zinc-300"
+          className="rounded px-2 py-0.5 text-xs text-muted-foreground hover:bg-accent hover:text-foreground"
         >
           초기화
         </button>
@@ -236,22 +236,22 @@ function ImmerPanel() {
         <div className="space-y-3">
           <button
             onClick={addScore}
-            className="rounded-md bg-indigo-900/40 px-4 py-2 text-sm font-medium text-indigo-300 transition-colors hover:bg-indigo-900/60"
+            className="rounded-md bg-indigo-900/40 px-4 py-2 text-sm font-medium text-indigo-300 transition-colors hover:bg-indigo-900/60 light:bg-zinc-100 light:text-zinc-700 light:hover:bg-zinc-200"
           >
             + 점수 추가
           </button>
-          <div className="space-y-1 text-sm text-zinc-300">
+          <div className="space-y-1 text-sm text-foreground">
             <p>
-              <span className="text-zinc-500">이름:</span> {state.user.name}
+              <span className="text-muted-foreground">이름:</span> {state.user.name}
             </p>
             <p>
-              <span className="text-zinc-500">점수:</span>{" "}
+              <span className="text-muted-foreground">점수:</span>{" "}
               <span className="font-mono">[{state.user.scores.join(", ")}]</span>
             </p>
             {state.user.scores.length > 0 && (
               <p>
-                <span className="text-zinc-500">평균:</span>{" "}
-                <span className="text-indigo-300 font-semibold">{avg}점</span>
+                <span className="text-muted-foreground">평균:</span>{" "}
+                <span className="text-indigo-300 font-semibold light:text-zinc-700">{avg}점</span>
               </p>
             )}
           </div>
@@ -286,8 +286,8 @@ export function Stage01Playground() {
   return (
     <div className="space-y-4 p-6">
       <div className="mb-2">
-        <h3 className="text-lg font-semibold text-white">실험실</h3>
-        <p className="mt-1 text-sm text-zinc-500">
+        <h3 className="text-lg font-semibold text-foreground">실험실</h3>
+        <p className="mt-1 text-sm text-muted-foreground">
           직접 버튼을 눌러 불변성 위반이 어떤 결과를 낳는지 체험해보세요.
         </p>
       </div>

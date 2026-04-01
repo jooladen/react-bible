@@ -1,6 +1,6 @@
 {
   "version": "3.0",
-  "lastUpdated": "2026-04-01T16:01:38.809Z",
+  "lastUpdated": "2026-04-01T17:28:04.874Z",
   "activeFeatures": [
     "react-bible",
     "stores",
@@ -21,7 +21,7 @@
       "documents": {},
       "timestamps": {
         "started": "2026-04-01T13:01:47.628Z",
-        "lastUpdated": "2026-04-01T16:00:57.126Z"
+        "lastUpdated": "2026-04-01T16:22:21.047Z"
       },
       "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\app\\layout.tsx",
       "stateMachine": {
@@ -64,7 +64,7 @@
       "documents": {},
       "timestamps": {
         "started": "2026-04-01T13:02:54.217Z",
-        "lastUpdated": "2026-04-01T13:02:54.217Z"
+        "lastUpdated": "2026-04-01T16:42:55.336Z"
       },
       "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\components\\ui\\badge.tsx"
     },
@@ -77,9 +77,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-04-01T13:03:00.615Z",
-        "lastUpdated": "2026-04-01T16:01:38.808Z"
+        "lastUpdated": "2026-04-01T17:28:04.873Z"
       },
-      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\components\\layout\\sidebar.tsx"
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\components\\layout\\main-layout.tsx"
     },
     "providers": {
       "phase": "do",
@@ -116,9 +116,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-04-01T15:09:18.922Z",
-        "lastUpdated": "2026-04-01T15:49:56.301Z"
+        "lastUpdated": "2026-04-01T17:23:03.352Z"
       },
-      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\features\\stage-01-immutability\\playground.tsx"
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\features\\stage-01-immutability\\theory.tsx"
     }
   },
   "pipeline": {
@@ -129,7 +129,7 @@
   "session": {
     "startedAt": "2026-04-01T13:01:47.628Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-04-01T16:01:38.809Z"
+    "lastActivity": "2026-04-01T17:28:04.874Z"
   },
   "history": [
     {
@@ -608,6 +608,618 @@
     },
     {
       "timestamp": "2026-04-01T16:01:38.808Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:22:09.296Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:22:14.556Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:22:21.047Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:22:26.126Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:22:32.134Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:22:37.558Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:22:42.520Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:22:48.205Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:22:53.215Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:23:05.240Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:23:09.789Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:23:15.079Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:23:19.786Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:23:24.462Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:23:30.498Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:26:36.057Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:26:41.083Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:26:45.821Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:26:50.449Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:27:13.227Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:27:18.371Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:27:25.589Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:27:31.817Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:27:37.473Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:27:42.199Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:27:48.151Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:27:52.811Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:27:57.860Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:33:34.733Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:33:45.027Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:33:50.658Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:33:57.406Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:34:09.805Z",
+      "feature": "ui",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:35:26.608Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:35:33.656Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:35:39.992Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:39:18.916Z",
+      "feature": "ui",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:39:26.922Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:39:33.146Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:42:55.336Z",
+      "feature": "ui",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:43:01.540Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:43:07.255Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:43:13.935Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:43:21.452Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:43:29.038Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:43:37.291Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:43:43.720Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:43:49.206Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:43:54.879Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:44:00.541Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:44:08.225Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:44:15.538Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:44:21.940Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:44:28.543Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:44:40.998Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:44:46.910Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:44:53.239Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:45:00.224Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:45:05.962Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:45:11.505Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:45:17.858Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:45:23.627Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:45:30.086Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:45:36.614Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:45:43.275Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:45:49.061Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:45:55.375Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:46:22.204Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:46:27.742Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:46:33.138Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:46:38.139Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:46:43.617Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:46:50.032Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:46:56.737Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:47:02.644Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:47:11.376Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T16:47:18.351Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:00:16.241Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:00:23.307Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:00:30.304Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:00:37.527Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:00:43.976Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:00:52.249Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:04:17.353Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:04:23.402Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:04:32.715Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:04:38.362Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:07:47.018Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:07:53.545Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:08:00.120Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:08:08.154Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:08:13.547Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:08:21.773Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:08:29.141Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:08:34.490Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:08:41.999Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:08:47.405Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:11:22.238Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:13:34.421Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:22:57.206Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:23:03.352Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-01T17:28:04.873Z",
       "feature": "layout",
       "phase": "do",
       "action": "updated"
