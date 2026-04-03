@@ -18,6 +18,25 @@ function genMockAddress(): string {
     .padStart(4, "0")}`
 }
 
+function addrToColor(addr: string): string {
+  const n = parseInt(addr.replace("0x", ""), 16)
+  const hue = (n * 137) % 360
+  return `hsl(${hue}, 65%, 50%)`
+}
+
+function AddrBlock({ addr, label, dim = false }: { addr: string; label: string; dim?: boolean }) {
+  return (
+    <div className="flex items-center gap-2">
+      <span className="w-14 shrink-0 text-zinc-500">{label}</span>
+      <div
+        className="h-4 w-8 rounded border border-zinc-700"
+        style={{ backgroundColor: addrToColor(addr), opacity: dim ? 0.5 : 1 }}
+      />
+      <span className={`font-mono text-xs ${dim ? "text-zinc-500" : "text-zinc-300"}`}>{addr}</span>
+    </div>
+  )
+}
+
 // ─── Tab 1 데모: 일반 변수 vs useState ────────────────────────────────────────
 
 function PrimitiveDemo() {
@@ -131,21 +150,23 @@ function BadCasePanel() {
           </div>
         </div>
 
-        <div className="rounded-md bg-zinc-900 p-3 text-xs font-mono">
-          <p className="mb-2 text-zinc-500">메모리 주소</p>
-          {actualCount === 0 ? (
-            <p className="text-zinc-500 italic">버튼 클릭 후 주소 변화를 확인하세요</p>
-          ) : (
-            <>
-              <p className="text-zinc-400">
-                Before: <span className="text-amber-400">{fixedAddress}</span>
-              </p>
-              <p className="text-zinc-400">
-                After: <span className="text-amber-400">{fixedAddress}</span>
-              </p>
-              <p className="mt-2 text-red-400">⚠️ 동일 주소 → 리렌더 없음</p>
-            </>
-          )}
+        <div className="rounded-md bg-zinc-900 p-3 text-xs font-mono space-y-3">
+          <div>
+            <p className="mb-2 text-zinc-500">메모리 주소</p>
+            {actualCount === 0 ? (
+              <p className="text-zinc-500 italic">버튼 클릭 후 주소 변화를 확인하세요</p>
+            ) : (
+              <>
+                <AddrBlock addr={fixedAddress} label="Before:" />
+                <AddrBlock addr={fixedAddress} label="After:" />
+                <p className="mt-1 text-red-400">⚠️ 같은 색 = 같은 주소 → 리렌더 없음</p>
+              </>
+            )}
+          </div>
+          <div className="border-t border-zinc-800 pt-2">
+            <p className="text-zinc-500 mb-1">리렌더</p>
+            <span className="rounded bg-red-900/40 px-2 py-0.5 text-xs font-bold text-red-300">0회</span>
+          </div>
         </div>
       </div>
 
@@ -160,6 +181,8 @@ function GoodCasePanel() {
   const [items, setItems] = useState<string[]>([])
   const prevAddress = useRef("0x????")
   const [curAddress, setCurAddress] = useState("0x????")
+  const [renderCount, setRenderCount] = useState(0)
+  const [isFlashing, setIsFlashing] = useState(false)
 
   useEffect(() => {
     const addr = genMockAddress()
@@ -167,11 +190,19 @@ function GoodCasePanel() {
     setCurAddress(addr)
   }, [])
 
+  useEffect(() => {
+    if (!isFlashing) return
+    const t = setTimeout(() => setIsFlashing(false), 500)
+    return () => clearTimeout(t)
+  }, [isFlashing])
+
   function goodAdd() {
     prevAddress.current = curAddress
     const next = genMockAddress()
     setCurAddress(next)
     setItems((prev) => [...prev, ITEM_LABEL])
+    setRenderCount((c) => c + 1)
+    setIsFlashing(true)
   }
 
   function reset() {
@@ -179,13 +210,24 @@ function GoodCasePanel() {
     prevAddress.current = fresh
     setCurAddress(fresh)
     setItems([])
+    setRenderCount(0)
+    setIsFlashing(false)
   }
 
   return (
-    <div className="rounded-lg border border-green-900/50 bg-green-950/10 p-5 light:border-green-200 light:bg-green-50/40">
+    <div
+      className={`rounded-lg border p-5 transition-colors duration-300 light:border-green-200 light:bg-green-50/40 ${
+        isFlashing
+          ? "border-green-400 bg-green-900/25"
+          : "border-green-900/50 bg-green-950/10"
+      }`}
+    >
       <div className="mb-4 flex items-center justify-between">
         <h4 className="flex items-center gap-2 font-semibold text-green-400 light:text-green-600">
           <span>🟢</span> Good Case: 스프레드 연산자
+          {isFlashing && (
+            <span className="animate-pulse text-xs font-normal text-green-300">⚡ 리렌더!</span>
+          )}
         </h4>
         <button
           onClick={reset}
@@ -221,21 +263,25 @@ function GoodCasePanel() {
           )}
         </div>
 
-        <div className="rounded-md bg-zinc-900 p-3 text-xs font-mono">
-          <p className="mb-2 text-zinc-500">메모리 주소</p>
-          {items.length === 0 ? (
-            <p className="text-zinc-500 italic">버튼 클릭 후 주소 변화를 확인하세요</p>
-          ) : (
-            <>
-              <p className="text-zinc-400">
-                Before: <span className="text-zinc-400">{prevAddress.current}</span>
-              </p>
-              <p className="text-zinc-400">
-                After: <span className="text-green-400">{curAddress}</span>
-              </p>
-              <p className="mt-2 text-green-400">✅ 새 주소! React가 변화를 감지함</p>
-            </>
-          )}
+        <div className="rounded-md bg-zinc-900 p-3 text-xs font-mono space-y-3">
+          <div>
+            <p className="mb-2 text-zinc-500">메모리 주소</p>
+            {items.length === 0 ? (
+              <p className="text-zinc-500 italic">버튼 클릭 후 주소 변화를 확인하세요</p>
+            ) : (
+              <>
+                <AddrBlock addr={prevAddress.current} label="Before:" dim />
+                <AddrBlock addr={curAddress} label="After:" />
+                <p className="mt-1 text-green-400">✅ 다른 색 = 새 주소 → 리렌더!</p>
+              </>
+            )}
+          </div>
+          <div className="border-t border-zinc-800 pt-2">
+            <p className="text-zinc-500 mb-1">리렌더</p>
+            <span className="rounded bg-green-900/40 px-2 py-0.5 text-xs font-bold text-green-300">
+              {renderCount}회
+            </span>
+          </div>
         </div>
       </div>
 
@@ -257,6 +303,20 @@ function ArrayObjectDemo() {
 }
 
 // ─── Tab 3 데모: Immer (playground.tsx에서 이전) ──────────────────────────────
+
+const SPREAD_BY_DEPTH = [
+  `setState({ ...state, name: "준" })`,
+  `setState({\n  ...state,\n  address: { ...state.address, city: "서울" }\n})`,
+  `setState({\n  ...state,\n  user: {\n    ...state.user,\n    profile: { ...state.user.profile, city: "서울" }\n  }\n})`,
+  `setState({\n  ...state,\n  data: {\n    ...state.data,\n    user: {\n      ...state.data.user,\n      profile: { ...state.data.user.profile, city: "서울" }\n    }\n  }\n})`,
+]
+
+const IMMER_BY_DEPTH = [
+  `setState(produce(d => {\n  d.name = "준"\n}))`,
+  `setState(produce(d => {\n  d.address.city = "서울"\n}))`,
+  `setState(produce(d => {\n  d.user.profile.city = "서울"\n}))`,
+  `setState(produce(d => {\n  d.data.user.profile.city = "서울"\n}))`,
+]
 
 type ImmerState = {
   user: { name: string; scores: number[] }
@@ -296,6 +356,7 @@ function ImmerDemo() {
     user: { name: "학습자", scores: [] },
   })
   const [lastAction, setLastAction] = useState<ImmerAction>(null)
+  const [depth, setDepth] = useState(1)
 
   function addScore() {
     setState(produce((draft) => {
@@ -406,6 +467,57 @@ function ImmerDemo() {
 
       <p className="mt-3 text-xs text-zinc-600">
         Immer는 추가/수정/삭제 모두 동일 문법 — spread 없이 직관적으로 작성
+      </p>
+    </div>
+
+    {/* 중첩 깊이 비교 섹션 */}
+    <div className="rounded-lg border border-zinc-700/50 bg-zinc-900/30 p-5 light:border-zinc-300 light:bg-zinc-50">
+      <div className="mb-4 flex items-center justify-between">
+        <h4 className="text-sm font-semibold text-zinc-300 light:text-zinc-700">
+          🔬 중첩 깊이별 코드 비교
+        </h4>
+        <div className="flex items-center gap-2">
+          <span className="text-xs text-zinc-500">Depth:</span>
+          {[1, 2, 3, 4].map((d) => (
+            <button
+              key={d}
+              onClick={() => setDepth(d)}
+              className={`h-6 w-6 rounded text-xs font-bold transition-colors ${
+                depth === d
+                  ? "bg-indigo-600 text-white"
+                  : "bg-zinc-700 text-zinc-400 hover:bg-zinc-600"
+              }`}
+            >
+              {d}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-3">
+        <div>
+          <p className="mb-2 flex items-center gap-1 text-xs font-medium text-red-400">
+            <span>❌</span> Spread (depth {depth})
+          </p>
+          <pre className={`rounded bg-zinc-950 p-3 font-mono text-xs leading-relaxed text-red-300 whitespace-pre-wrap ${depth >= 3 ? "text-[10px]" : ""}`}>
+            {SPREAD_BY_DEPTH[depth - 1]}
+          </pre>
+        </div>
+        <div>
+          <p className="mb-2 flex items-center gap-1 text-xs font-medium text-green-400">
+            <span>✅</span> Immer (depth {depth})
+          </p>
+          <pre className="rounded bg-zinc-950 p-3 font-mono text-xs leading-relaxed text-green-300 whitespace-pre-wrap">
+            {IMMER_BY_DEPTH[depth - 1]}
+          </pre>
+        </div>
+      </div>
+
+      <p className="mt-3 text-center text-xs text-zinc-500">
+        {depth === 1 && "depth 1 — 둘 다 비슷해 보임"}
+        {depth === 2 && "depth 2 — spread가 조금 더 복잡해짐"}
+        {depth === 3 && "depth 3 — spread가 눈에 띄게 길어짐 😬"}
+        {depth === 4 && "depth 4 — spread 지옥 시작... Immer는 여전히 한 줄 🎉"}
       </p>
     </div>
     </div>
