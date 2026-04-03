@@ -3,7 +3,50 @@
     "allow": [
       "mcp__plugin_bkit_bkit-pdca__bkit_pdca_status",
       "mcp__plugin_bkit_bkit-pdca__bkit_plan_read",
-      "Skill(bkit:pdca)"
+      "Skill(bkit:pdca)",
+      "Bash(pnpm run:*)",
+      "Bash(pnpm dev*)",
+      "Bash(pnpm build*)",
+      "Bash(pnpm lint*)",
+      "Bash(pnpm typecheck*)",
+      "Bash(pnpm install*)",
+      "Bash(pnpm exec tsc*)"
+    ],
+    "deny": []
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /c/Users/jooladen/Desktop/claude-code2/react-bible && timeout 15 pnpm exec tsc --noEmit --incremental 2>&1 | tail -5 || true"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '$TOOL_INPUT' | grep -qE '(stores/|lib/stages\\.ts)' && echo '[경고] 핵심 파일 편집 감지 — 3중 검증 필수 (import 검색 + 파일 내 사용 + 구조 비교)' || true"
+          }
+        ]
+      }
+    ],
+    "PermissionDenied": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "mkdir -p /c/Users/jooladen/Desktop/claude-code2/react-bible/.bkit/audit && echo \"[$(date '+%Y-%m-%d %H:%M:%S')] PermissionDenied\" >> /c/Users/jooladen/Desktop/claude-code2/react-bible/.bkit/audit/permission-denied.log 2>/dev/null || true"
+          }
+        ]
+      }
     ]
   }
 }

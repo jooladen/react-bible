@@ -11,7 +11,7 @@ export const STAGES: Stage[] = [
     difficulty: "easy",
     group: 1,
     groupName: "입력과 기초",
-    status: "todo",
+    status: "done",
   },
   {
     id: 2,

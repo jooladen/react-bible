@@ -99,10 +99,9 @@
 
 1. `theme-store.ts` 생성
 2. `globals.css` 라이트 변수 추가
-3. `theme-provider.tsx` 생성
-4. `dark-mode-toggle.tsx` 생성
-5. `layout.tsx` 수정 (ThemeProvider 감싸기 + DarkModeToggle 배치)
-6. 빌드 검증
+3. `dark-mode-toggle.tsx` 생성 (ThemeProvider 미생성 — F-03 취소)
+4. `layout.tsx` 수정 (DarkModeToggle 배치)
+5. 빌드 검증
 
 ---
 

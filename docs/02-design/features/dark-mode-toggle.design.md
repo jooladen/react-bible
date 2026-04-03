@@ -167,18 +167,19 @@ rounded-md p-1.5 text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-zi
 ### 5.2 추가: .light 클래스 오버라이드
 
 ```css
+/* vibeindex.ai 라이트 테마 브랜드로 변경 — 2026-04-04 */
 .light {
   --background: #ffffff;
-  --foreground: #09090b;
-  --card: #f4f4f5;           /* zinc-100 */
-  --card-foreground: #09090b;
-  --border: #e4e4e7;         /* zinc-200 */
-  --input: #e4e4e7;
-  --primary: #6366f1;        /* indigo-500 (라이트에서도 유지) */
+  --foreground: #111827;     /* gray-900 (초기 설계 zinc-950에서 변경) */
+  --card: #ffffff;           /* 초기 설계 zinc-100에서 변경 */
+  --card-foreground: #111827;
+  --border: #e5e7eb;         /* gray-200 */
+  --input: #e5e7eb;
+  --primary: #14b8a6;        /* teal-500 — vibeindex 브랜드 (초기 설계 indigo-500에서 변경) */
   --primary-foreground: #ffffff;
-  --muted: #f4f4f5;
-  --muted-foreground: #71717a;
-  --accent: #f4f4f5;
+  --muted: #f9fafb;          /* gray-50 (초기 설계 zinc-100에서 변경) */
+  --muted-foreground: #6b7280; /* gray-500 */
+  --accent: #f3f4f6;
   --accent-foreground: #09090b;
   --secondary: #f4f4f5;
   --secondary-foreground: #09090b;

@@ -39,9 +39,10 @@
 
 #### F-02: Zustand progress-store
 - 파일: `src/stores/progress-store.ts`
-- 완료된 stage slug 목록을 Set으로 관리 (`completedSlugs: Set<string>`)
+- 완료된 stage slug 목록을 배열로 관리 (`completedSlugs: string[]`) — JSON 직렬화 호환 (Set 미사용)
 - Zustand `persist` 미들웨어로 localStorage에 저장 (`key: 'react-bible-progress'`)
-- Actions: `markDone(slug)`, `isCompleted(slug): boolean`, `completedCount: number`
+- Actions: `markDone(slug)`, `isCompleted(slug): boolean`
+- `completedCount`는 스토어 액션 아님 — `sidebar.tsx`에서 `STAGES.filter()`로 계산
 
 #### F-03: 사이드바 전체 진행률 Progress 바
 - 파일: `src/components/layout/sidebar.tsx` 수정

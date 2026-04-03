@@ -70,12 +70,37 @@ src/features/stage-XX-[name]/
 └── code-viewer.tsx     # 핵심 코드 + 문법 강조
 ```
 
-`theory.tsx` 내부 패턴:
+`theory.tsx` 내부 패턴 (실제 구현 기준):
 ```tsx
+"use client"
+// Design Ref: §X.X — 이중 설명 (초딩/개발자) + shadcn Card 그리드 레이아웃
 import { useExplanationStore } from "@/stores/explanation-store"
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 
-export function Stage01Theory() {
+type ConceptCard = {
+  title: string
+  icon: string
+  child: React.ReactNode  // 초딩 설명
+  dev: React.ReactNode    // 개발자 설명
+}
+
+const CONCEPTS: ConceptCard[] = [ ... ]
+
+export function Stage{N}Theory() {
   const { mode } = useExplanationStore()
-  return mode === "child" ? <ChildExplanation /> : <DevExplanation />
+  return (
+    <div className="p-6">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        {CONCEPTS.map((concept) => (
+          <Card key={concept.title}>
+            <CardHeader>...</CardHeader>
+            <CardContent>
+              {mode === "child" ? concept.child : concept.dev}
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  )
 }
 ```
