@@ -133,13 +133,19 @@ function BadCasePanel() {
 
         <div className="rounded-md bg-zinc-900 p-3 text-xs font-mono">
           <p className="mb-2 text-zinc-500">메모리 주소</p>
-          <p className="text-zinc-400">
-            Before: <span className="text-amber-400">{fixedAddress}</span>
-          </p>
-          <p className="text-zinc-400">
-            After: <span className="text-amber-400">{fixedAddress}</span>
-          </p>
-          <p className="mt-2 text-red-400">⚠️ 동일 주소 → 리렌더 없음</p>
+          {actualCount === 0 ? (
+            <p className="text-zinc-500 italic">버튼 클릭 후 주소 변화를 확인하세요</p>
+          ) : (
+            <>
+              <p className="text-zinc-400">
+                Before: <span className="text-amber-400">{fixedAddress}</span>
+              </p>
+              <p className="text-zinc-400">
+                After: <span className="text-amber-400">{fixedAddress}</span>
+              </p>
+              <p className="mt-2 text-red-400">⚠️ 동일 주소 → 리렌더 없음</p>
+            </>
+          )}
         </div>
       </div>
 
@@ -217,14 +223,18 @@ function GoodCasePanel() {
 
         <div className="rounded-md bg-zinc-900 p-3 text-xs font-mono">
           <p className="mb-2 text-zinc-500">메모리 주소</p>
-          <p className="text-zinc-400">
-            Before: <span className="text-zinc-400">{prevAddress.current}</span>
-          </p>
-          <p className="text-zinc-400">
-            After: <span className="text-green-400">{curAddress}</span>
-          </p>
-          {items.length > 0 && (
-            <p className="mt-2 text-green-400">✅ 새 주소! React가 변화를 감지함</p>
+          {items.length === 0 ? (
+            <p className="text-zinc-500 italic">버튼 클릭 후 주소 변화를 확인하세요</p>
+          ) : (
+            <>
+              <p className="text-zinc-400">
+                Before: <span className="text-zinc-400">{prevAddress.current}</span>
+              </p>
+              <p className="text-zinc-400">
+                After: <span className="text-green-400">{curAddress}</span>
+              </p>
+              <p className="mt-2 text-green-400">✅ 새 주소! React가 변화를 감지함</p>
+            </>
           )}
         </div>
       </div>
@@ -252,21 +262,67 @@ type ImmerState = {
   user: { name: string; scores: number[] }
 }
 
+type ImmerAction = "add" | "update" | "delete" | null
+
+const IMMER_CODE: Record<NonNullable<ImmerAction>, React.ReactNode> = {
+  add: (
+    <>
+      <p><span className="text-yellow-400">setState</span>(<span className="text-indigo-400">produce</span>(draft {`=>`} {"{"}</p>
+      <p className="pl-3 text-amber-400">draft.user.scores</p>
+      <p className="pl-5 text-amber-400">.push(score)</p>
+      <p>{"}))"}</p>
+    </>
+  ),
+  update: (
+    <>
+      <p><span className="text-yellow-400">setState</span>(<span className="text-indigo-400">produce</span>(draft {`=>`} {"{"}</p>
+      <p className="pl-3 text-amber-400">{"const max = Math.max(...draft.user.scores)"}</p>
+      <p className="pl-3 text-amber-400">{"const i = draft.user.scores.indexOf(max)"}</p>
+      <p className="pl-3 text-amber-400">{"draft.user.scores[i] = 100"}</p>
+      <p>{"}))"}</p>
+    </>
+  ),
+  delete: (
+    <>
+      <p><span className="text-yellow-400">setState</span>(<span className="text-indigo-400">produce</span>(draft {`=>`} {"{"}</p>
+      <p className="pl-3 text-amber-400">draft.user.scores.splice(-1, 1)</p>
+      <p>{"}))"}</p>
+    </>
+  ),
+}
+
 function ImmerDemo() {
   const [state, setState] = useState<ImmerState>({
     user: { name: "학습자", scores: [] },
   })
+  const [lastAction, setLastAction] = useState<ImmerAction>(null)
 
   function addScore() {
-    setState(
-      produce((draft) => {
-        draft.user.scores.push(Math.floor(Math.random() * 40) + 60)
-      })
-    )
+    setState(produce((draft) => {
+      draft.user.scores.push(Math.floor(Math.random() * 40) + 60)
+    }))
+    setLastAction("add")
+  }
+
+  function updateMax() {
+    setState(produce((draft) => {
+      const max = Math.max(...draft.user.scores)
+      const i = draft.user.scores.indexOf(max)
+      draft.user.scores[i] = 100
+    }))
+    setLastAction("update")
+  }
+
+  function deleteLast() {
+    setState(produce((draft) => {
+      draft.user.scores.splice(-1, 1)
+    }))
+    setLastAction("delete")
   }
 
   function reset() {
     setState({ user: { name: "학습자", scores: [] } })
+    setLastAction(null)
   }
 
   const avg =
@@ -278,7 +334,7 @@ function ImmerDemo() {
 
   return (
     <div className="space-y-3">
-      <p className="text-xs text-muted-foreground">👇 아래 추가 버튼을 눌러보세요</p>
+      <p className="text-xs text-muted-foreground">👇 추가 → 수정 → 삭제 순서로 눌러보세요</p>
     <div className="rounded-lg border border-indigo-900/50 bg-indigo-950/10 p-5 light:border-zinc-200 light:bg-zinc-50/60">
       <div className="mb-4 flex items-center justify-between">
         <h4 className="flex items-center gap-2 font-semibold text-indigo-400 light:text-zinc-700">
@@ -294,12 +350,28 @@ function ImmerDemo() {
 
       <div className="grid grid-cols-2 gap-4">
         <div className="space-y-3">
-          <button
-            onClick={addScore}
-            className="rounded-md bg-indigo-900/40 px-4 py-2 text-sm font-medium text-indigo-300 transition-colors hover:bg-indigo-900/60 light:bg-zinc-100 light:text-zinc-700 light:hover:bg-zinc-200"
-          >
-            + 점수 추가
-          </button>
+          <div className="flex flex-wrap gap-2">
+            <button
+              onClick={addScore}
+              className="rounded-md bg-indigo-900/40 px-3 py-1.5 text-sm font-medium text-indigo-300 transition-colors hover:bg-indigo-900/60 light:bg-zinc-100 light:text-zinc-700 light:hover:bg-zinc-200"
+            >
+              + 추가
+            </button>
+            <button
+              onClick={updateMax}
+              disabled={state.user.scores.length === 0}
+              className="rounded-md bg-amber-900/40 px-3 py-1.5 text-sm font-medium text-amber-300 transition-colors hover:bg-amber-900/60 disabled:opacity-30 light:bg-amber-100 light:text-amber-700 light:hover:bg-amber-200"
+            >
+              ✏️ 최고점 → 100
+            </button>
+            <button
+              onClick={deleteLast}
+              disabled={state.user.scores.length === 0}
+              className="rounded-md bg-red-900/40 px-3 py-1.5 text-sm font-medium text-red-300 transition-colors hover:bg-red-900/60 disabled:opacity-30 light:bg-red-100 light:text-red-700 light:hover:bg-red-200"
+            >
+              🗑️ 마지막 삭제
+            </button>
+          </div>
           <div className="space-y-1 text-sm text-foreground">
             <p>
               <span className="text-muted-foreground">이름:</span> {state.user.name}
@@ -318,21 +390,22 @@ function ImmerDemo() {
         </div>
 
         <div className="rounded-md bg-zinc-900 p-3 text-xs font-mono leading-relaxed">
-          <p className="mb-2 text-zinc-500">코드</p>
-          <p>
-            <span className="text-indigo-400">produce</span>(state, draft {`=>`} {"{"}
+          <p className="mb-2 text-zinc-500">
+            {lastAction === null ? "코드 (버튼 클릭 시 갱신)" : `마지막 실행 코드 (${lastAction === "add" ? "추가" : lastAction === "update" ? "수정" : "삭제"})`}
           </p>
-          <p className="pl-3 text-amber-400">draft.user.scores</p>
-          <p className="pl-5 text-amber-400">.push(score)</p>
-          <p>{"}"}{`)`}</p>
-          {state.user.scores.length > 0 && (
-            <p className="mt-2 text-green-400">✅ 중첩 객체도 직접 수정 가능!</p>
+          {lastAction === null ? (
+            <p className="text-zinc-600 italic">← 버튼을 눌러보세요</p>
+          ) : (
+            <>
+              {IMMER_CODE[lastAction]}
+              <p className="mt-2 text-green-400">✅ draft를 직접 변이해도 새 불변 객체 반환!</p>
+            </>
           )}
         </div>
       </div>
 
       <p className="mt-3 text-xs text-zinc-600">
-        `draft.user.scores.push(score)` — 직접 변이처럼 보이지만 Immer가 새 불변 객체를 반환함
+        Immer는 추가/수정/삭제 모두 동일 문법 — spread 없이 직관적으로 작성
       </p>
     </div>
     </div>
