@@ -46,32 +46,39 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* Design Ref: §5.2 — Clean Minimal (라이트 테마) */
+/* Design Ref: §5.2 — vibeindex.ai inspired (라이트 테마) */
 .light {
   --background: #ffffff;
-  --foreground: #0a0a0a;
+  --foreground: #111827;
   --card: #ffffff;
-  --card-foreground: #0a0a0a;
-  --border: #e5e5e5;
-  --input: #e5e5e5;
-  --primary: #4f46e5;
+  --card-foreground: #111827;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --primary: #14b8a6;          /* teal — vibeindex 브랜드 */
   --primary-foreground: #ffffff;
-  --muted: #f5f5f5;
-  --muted-foreground: #737373;
-  --accent: #f0f0f0;
-  --accent-foreground: #0a0a0a;
+  --muted: #f9fafb;
+  --muted-foreground: #6b7280;
+  --accent: #f3f4f6;
+  --accent-foreground: #111827;
   --destructive: #dc2626;
-  --ring: #4f46e5;
-  --secondary: #f5f5f5;
-  --secondary-foreground: #0a0a0a;
+  --ring: #14b8a6;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #111827;
+  --radius: 0.75rem;
 }
 
 /* Tailwind v4 custom variant — light:xxx 클래스 사용 가능하게 */
 @custom-variant light (&:is(.light *));
 
-/* 라이트 모드 — 사이드바 배경만 구분 */
+/* 라이트 모드 — 사이드바 + 헤더 */
 .light aside {
-  background-color: #fafafa !important;
+  background-color: #f9fafb !important;
+  border-color: #e5e7eb !important;
+}
+
+/* 라이트 모드 — 카드 미세 그림자 */
+.light .border {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.04);
 }
 
 html,

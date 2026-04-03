@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import { MainLayout } from "@/components/layout/main-layout"
-import { ExplanationToggle } from "@/components/layout/explanation-toggle"
 import { DarkModeToggle } from "@/components/layout/dark-mode-toggle"
 import { QueryProvider } from "@/components/providers/query-provider"
 import { StoreHydration } from "@/components/providers/store-hydration"
@@ -47,7 +46,6 @@ export default function RootLayout({
               <span className="hidden sm:inline font-mono text-xs text-muted-foreground">v1.0.0</span>
             </div>
             <div className="flex items-center gap-3">
-              <ExplanationToggle />
               <DarkModeToggle />
             </div>
           </header>

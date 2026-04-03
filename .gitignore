@@ -45,3 +45,7 @@ next-env.d.ts
 # test artifacts
 .playwright-mcp/
 .bkit/snapshots/
+
+# pnpm pack artifacts
+next
+react-bible@*

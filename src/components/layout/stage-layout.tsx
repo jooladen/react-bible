@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { DifficultyBadge } from "@/components/ui/badge"
 import { useExplanationStore } from "@/stores/explanation-store"
+import { TheoryModeToggle } from "./theory-mode-toggle"
 import { useProgressStore } from "@/stores/progress-store"
 import { STAGES } from "@/lib/stages"
 import type { Stage } from "@/types/stage"
@@ -99,7 +100,7 @@ export function StageLayout({
                   className={cn(
                     "flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-all",
                     isActive
-                      ? "bg-indigo-500/20 text-indigo-300 light:bg-zinc-100 light:text-zinc-900"
+                      ? "bg-indigo-500/20 text-indigo-300 light:bg-teal-50 light:text-teal-800"
                       : isPast
                         ? "text-muted-foreground hover:bg-accent hover:text-foreground"
                         : "text-muted-foreground/50 hover:bg-accent hover:text-muted-foreground"
@@ -109,7 +110,7 @@ export function StageLayout({
                     className={cn(
                       "flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-bold",
                       isActive
-                        ? "bg-indigo-500 light:bg-zinc-800 text-white"
+                        ? "bg-indigo-500 light:bg-teal-500 text-white"
                         : isPast
                           ? "bg-muted text-muted-foreground"
                           : "border border-border text-muted-foreground/50"
@@ -135,6 +136,12 @@ export function StageLayout({
 
       {/* Content area */}
       <div className="flex-1 overflow-auto">
+        {/* Plan SC: 이론탭 활성 시에만 모드 토글 표시 */}
+        {activeTab === "theory" && (
+          <div className="border-b border-border bg-background">
+            <TheoryModeToggle />
+          </div>
+        )}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -184,7 +191,7 @@ export function StageLayout({
         ) : (
           <button
             onClick={() => markDone(stage.slug)}
-            className="flex items-center gap-1.5 rounded-md bg-indigo-500/20 px-4 py-1.5 text-sm font-medium text-indigo-300 transition-colors hover:bg-indigo-500/30"
+            className="flex items-center gap-1.5 rounded-md bg-indigo-500/20 px-4 py-1.5 text-sm font-medium text-indigo-300 transition-colors hover:bg-indigo-500/30 light:bg-teal-100 light:text-teal-700 light:hover:bg-teal-200"
           >
             ✅ 학습 완료
           </button>

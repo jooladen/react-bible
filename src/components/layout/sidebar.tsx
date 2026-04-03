@@ -25,14 +25,14 @@ function StageItem({
       className={cn(
         "group flex items-start gap-2 rounded-md px-3 py-2 text-sm transition-all",
         isActive
-          ? "bg-indigo-500/15 text-indigo-300 light:bg-zinc-100 light:text-zinc-900 border-l-2 border-indigo-500 light:border-zinc-400"
-          : "text-zinc-400 hover:bg-accent/60 hover:text-foreground border-l-2 border-transparent"
+          ? "bg-indigo-500/15 text-indigo-300 light:bg-teal-50 light:text-teal-900 border-l-2 border-indigo-500 light:border-teal-500"
+          : "text-zinc-400 hover:bg-accent/60 hover:text-foreground light:text-zinc-500 light:hover:text-zinc-900 border-l-2 border-transparent"
       )}
     >
       <span
         className={cn(
           "mt-0.5 shrink-0 font-mono text-xs font-semibold w-5 text-right",
-          isActive ? "text-indigo-400 light:text-zinc-600" : "text-muted-foreground group-hover:text-muted-foreground"
+          isActive ? "text-indigo-400 light:text-teal-600" : "text-muted-foreground group-hover:text-muted-foreground"
         )}
       >
         {String(stage.id).padStart(2, "0")}

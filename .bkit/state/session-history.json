@@ -70,5 +70,21 @@
     "feature": null,
     "phase": null,
     "progress": null
+  },
+  {
+    "sessionId": "9eb65cc8-722b-4208-ac4a-027119f02031",
+    "reason": "prompt_input_exit",
+    "endedAt": "2026-04-03T14:31:35.799Z",
+    "feature": null,
+    "phase": null,
+    "progress": null
+  },
+  {
+    "sessionId": "2e8caac1-1af6-45e1-96a6-354659032b49",
+    "reason": "prompt_input_exit",
+    "endedAt": "2026-04-03T15:07:27.762Z",
+    "feature": null,
+    "phase": null,
+    "progress": null
   }
 ]
