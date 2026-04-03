@@ -9,15 +9,22 @@ type Props = {
 }
 
 // Design Ref: §4.4 — slug별 dynamic import 맵. 새 Stage 추가 시 여기에만 한 항목 추가
+// Combined 있으면 combined 우선 렌더링, 없으면 기존 3탭 동작 (하위 호환)
 const STAGE_CONTENT: Record<
   string,
   {
     Theory: React.ComponentType
     Playground: React.ComponentType
     CodeViewer: React.ComponentType
+    Combined?: React.ComponentType
   }
 > = {
   immutability: {
+    Combined: dynamic(() =>
+      import("@/features/stage-01-immutability/combined").then((m) => ({
+        default: m.Stage01Combined,
+      }))
+    ),
     Theory: dynamic(() =>
       import("@/features/stage-01-immutability/theory").then((m) => ({
         default: m.Stage01Theory,
@@ -62,6 +69,7 @@ export default async function StagePage({ params }: Props) {
     <div className="h-full">
       <StageLayout
         stage={stage}
+        combined={content?.Combined ? <content.Combined /> : undefined}
         theory={content ? <content.Theory /> : undefined}
         playground={content ? <content.Playground /> : undefined}
         code={content ? <content.CodeViewer /> : undefined}

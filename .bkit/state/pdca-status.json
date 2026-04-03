@@ -1,6 +1,6 @@
 {
   "version": "3.0",
-  "lastUpdated": "2026-04-03T16:14:29.472Z",
+  "lastUpdated": "2026-04-03T18:34:40.839Z",
   "activeFeatures": [
     "react-bible",
     "stores",
@@ -21,7 +21,7 @@
       "documents": {},
       "timestamps": {
         "started": "2026-04-01T13:01:47.628Z",
-        "lastUpdated": "2026-04-03T16:14:29.464Z"
+        "lastUpdated": "2026-04-03T17:52:21.752Z"
       },
       "lastFile": "C:\\Users\\jooladen\\Desktop\\claude-code2\\react-bible\\src\\lib\\stages.ts",
       "stateMachine": {
@@ -64,9 +64,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-04-01T13:02:54.217Z",
-        "lastUpdated": "2026-04-01T16:42:55.336Z"
+        "lastUpdated": "2026-04-03T17:48:47.905Z"
       },
-      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\components\\ui\\badge.tsx"
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\claude-code2\\react-bible\\src\\components\\ui\\copy-button.tsx"
     },
     "layout": {
       "phase": "do",
@@ -77,9 +77,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-04-01T13:03:00.615Z",
-        "lastUpdated": "2026-04-03T15:31:19.985Z"
+        "lastUpdated": "2026-04-03T18:15:10.134Z"
       },
-      "lastFile": "C:\\Users\\jooladen\\Desktop\\claude-code2\\react-bible\\src\\components\\layout\\stage-layout.tsx"
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\claude-code2\\react-bible\\src\\components\\layout\\combined-stage-view.tsx"
     },
     "providers": {
       "phase": "do",
@@ -103,9 +103,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-04-01T13:04:35.599Z",
-        "lastUpdated": "2026-04-01T15:10:50.242Z"
+        "lastUpdated": "2026-04-03T17:50:13.914Z"
       },
-      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\app\\stage\\[slug]\\page.tsx"
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\claude-code2\\react-bible\\src\\app\\stage\\[slug]\\page.tsx"
     },
     "stage-01-immutability": {
       "phase": "do",
@@ -116,9 +116,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-04-01T15:09:18.922Z",
-        "lastUpdated": "2026-04-01T17:23:03.352Z"
+        "lastUpdated": "2026-04-03T18:34:40.832Z"
       },
-      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\react-bible\\src\\features\\stage-01-immutability\\theory.tsx"
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\claude-code2\\react-bible\\src\\features\\stage-01-immutability\\combined.tsx"
     }
   },
   "pipeline": {
@@ -129,7 +129,7 @@
   "session": {
     "startedAt": "2026-04-01T13:01:47.628Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-04-03T16:14:29.472Z"
+    "lastActivity": "2026-04-03T18:34:40.839Z"
   },
   "history": [
     {
@@ -1305,6 +1305,156 @@
     {
       "timestamp": "2026-04-03T16:14:29.471Z",
       "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T16:59:29.256Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T17:48:37.451Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T17:48:47.912Z",
+      "feature": "ui",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T17:49:15.751Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T17:49:25.272Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T17:49:50.828Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T17:50:05.092Z",
+      "feature": "[slug]",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T17:50:13.920Z",
+      "feature": "[slug]",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T17:51:49.690Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T17:52:01.626Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T17:52:11.479Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T17:52:21.758Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T17:56:55.092Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T18:08:59.320Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T18:15:10.139Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T18:17:52.116Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T18:19:57.155Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T18:20:05.275Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T18:22:40.887Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T18:22:49.887Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T18:24:58.236Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T18:25:57.040Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T18:26:15.072Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T18:26:26.392Z",
+      "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-03T18:34:40.838Z",
+      "feature": "stage-01-immutability",
       "phase": "do",
       "action": "updated"
     }

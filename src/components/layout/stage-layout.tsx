@@ -26,6 +26,7 @@ type StageLayoutProps = {
   theory?: React.ReactNode
   playground?: React.ReactNode
   code?: React.ReactNode
+  combined?: React.ReactNode  // Design Ref: §4.4 — combined 있으면 3탭 stepper 숨기고 바로 렌더링
 }
 
 export function StageLayout({
@@ -33,6 +34,7 @@ export function StageLayout({
   theory,
   playground,
   code,
+  combined,
 }: StageLayoutProps) {
   const [activeTab, setActiveTab] = useState<Tab>("theory")
   const { mode } = useExplanationStore()
@@ -88,84 +90,98 @@ export function StageLayout({
           </div>
         </div>
 
-        {/* Stepper */}
-        <div className="mt-4 flex items-center gap-0">
-          {tabs.map((tab, i) => {
-            const isActive = activeTab === tab.id
-            const isPast = tabs.findIndex((t) => t.id === activeTab) > i
-            return (
-              <div key={tab.id} className="flex items-center">
-                <button
-                  onClick={() => setActiveTab(tab.id)}
-                  className={cn(
-                    "flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-all",
-                    isActive
-                      ? "bg-indigo-500/20 text-indigo-300 light:bg-teal-50 light:text-teal-800"
-                      : isPast
-                        ? "text-muted-foreground hover:bg-accent hover:text-foreground"
-                        : "text-muted-foreground/50 hover:bg-accent hover:text-muted-foreground"
-                  )}
-                >
-                  <span
+        {/* Stepper — combined 모드에서는 숨김 */}
+        {!combined && (
+          <div className="mt-4 flex items-center gap-0">
+            {tabs.map((tab, i) => {
+              const isActive = activeTab === tab.id
+              const isPast = tabs.findIndex((t) => t.id === activeTab) > i
+              return (
+                <div key={tab.id} className="flex items-center">
+                  <button
+                    onClick={() => setActiveTab(tab.id)}
                     className={cn(
-                      "flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-bold",
+                      "flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-all",
                       isActive
-                        ? "bg-indigo-500 light:bg-teal-500 text-white"
+                        ? "bg-indigo-500/20 text-indigo-300 light:bg-teal-50 light:text-teal-800"
                         : isPast
-                          ? "bg-muted text-muted-foreground"
-                          : "border border-border text-muted-foreground/50"
+                          ? "text-muted-foreground hover:bg-accent hover:text-foreground"
+                          : "text-muted-foreground/50 hover:bg-accent hover:text-muted-foreground"
                     )}
                   >
-                    {i + 1}
-                  </span>
-                  <span>{tab.label}</span>
-                </button>
-                {i < tabs.length - 1 && (
-                  <div
-                    className={cn(
-                      "h-px w-6 shrink-0",
-                      isPast ? "bg-muted-foreground/30" : "bg-border"
-                    )}
-                  />
-                )}
-              </div>
-            )
-          })}
-        </div>
+                    <span
+                      className={cn(
+                        "flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-bold",
+                        isActive
+                          ? "bg-indigo-500 light:bg-teal-500 text-white"
+                          : isPast
+                            ? "bg-muted text-muted-foreground"
+                            : "border border-border text-muted-foreground/50"
+                      )}
+                    >
+                      {i + 1}
+                    </span>
+                    <span>{tab.label}</span>
+                  </button>
+                  {i < tabs.length - 1 && (
+                    <div
+                      className={cn(
+                        "h-px w-6 shrink-0",
+                        isPast ? "bg-muted-foreground/30" : "bg-border"
+                      )}
+                    />
+                  )}
+                </div>
+              )
+            })}
+          </div>
+        )}
       </div>
 
       {/* Content area */}
-      <div className="flex-1 overflow-auto">
-        {/* Plan SC: 이론탭 활성 시에만 모드 토글 표시 */}
-        {activeTab === "theory" && (
-          <div className="border-b border-border bg-background">
-            <TheoryModeToggle />
-          </div>
-        )}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.15 }}
-            className="h-full"
-          >
-            {contentMap[activeTab] ?? (
-              <div className="flex h-full items-center justify-center">
-                <div className="text-center">
-                  <p className="text-4xl">🚧</p>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    이 섹션은 다음 세션에서 구현됩니다
-                  </p>
-                  <p className="mt-1 font-mono text-xs text-muted-foreground">
-                    /pdca do {stage.slug}
-                  </p>
-                </div>
+      <div className={`flex-1 overflow-auto${combined ? " flex flex-col" : ""}`}>
+        {combined ? (
+          <>
+            {/* combined 모드: TheoryModeToggle 유지 + combined 컴포넌트 직접 렌더링 */}
+            <div className="shrink-0 border-b border-border bg-background">
+              <TheoryModeToggle />
+            </div>
+            <div className="flex-1 overflow-auto">{combined}</div>
+          </>
+        ) : (
+          <>
+            {/* Plan SC: 이론탭 활성 시에만 모드 토글 표시 */}
+            {activeTab === "theory" && (
+              <div className="border-b border-border bg-background">
+                <TheoryModeToggle />
               </div>
             )}
-          </motion.div>
-        </AnimatePresence>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.15 }}
+                className="h-full"
+              >
+                {contentMap[activeTab] ?? (
+                  <div className="flex h-full items-center justify-center">
+                    <div className="text-center">
+                      <p className="text-4xl">🚧</p>
+                      <p className="mt-2 text-sm text-muted-foreground">
+                        이 섹션은 다음 세션에서 구현됩니다
+                      </p>
+                      <p className="mt-1 font-mono text-xs text-muted-foreground">
+                        /pdca do {stage.slug}
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </motion.div>
+            </AnimatePresence>
+          </>
+        )}
       </div>
 
       {/* 이전 / 다음 내비게이션 + 학습 완료 버튼 */}

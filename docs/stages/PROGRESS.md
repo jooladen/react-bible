@@ -28,7 +28,7 @@
 - [ ] **Stage 06** — Hooks & Closure `slug: hooks-closure` 🔴 어려움
 - [ ] **Stage 07** — Memoization (useMemo/useCallback) `slug: memoization` 🟡 보통
 - [ ] **Stage 08** — Design Systems (Headless UI) `slug: design-systems` 🟡 보통
-- [ ] **Stage 09** — CSS-in-JS vs Tailwind `slug: css-strategies` 🟢 쉬움
+- [ ] **Stage 09** — Key Props & 리스트 렌더링 `slug: key-props` 🟢 쉬움
 - [ ] **Stage 10** — Performance Profiling `slug: profiling` 🔴 어려움
 
 ## Phase 3: 확장과 연결 (덩치가 커지는 단계)
@@ -37,7 +37,7 @@
 - [ ] **Stage 12** — State Management (Zustand) `slug: state-management` 🟡 보통
 - [ ] **Stage 13** — Async State Handling (Race Condition) `slug: async-state` 🔴 어려움
 - [ ] **Stage 14** — Server State & Caching (TanStack Query) `slug: server-state` 🟡 보통
-- [ ] **Stage 15** — Fine-grained Reactivity (Signals) `slug: signals` 🔴 어려움
+- [ ] **Stage 15** — Error Boundary `slug: error-boundary` 🟡 보통
 
 ## Phase 4: 운영과 인프라 (장인의 마무리)
 
@@ -45,7 +45,7 @@
 - [ ] **Stage 17** — Hydration & SSR `slug: hydration` 🔴 어려움
 - [ ] **Stage 18** — Bundle Optimization `slug: bundle-optimization` 🔴 어려움
 - [ ] **Stage 19** — Web Workers `slug: web-workers` 🔴 어려움
-- [ ] **Stage 20** — Micro Frontends (MFE) `slug: mfe` 🔴 어려움
+- [ ] **Stage 20** — useRef 심화 `slug: use-ref-deep` 🟡 보통
 
 ---
 
