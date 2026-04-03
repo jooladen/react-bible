@@ -265,7 +265,7 @@ const TOPICS: TopicTab[] = [
     label: "배열/객체",
     icon: "📦",
     theory: { child: <ArrayTheoryChild />, dev: <ArrayTheoryDev /> },
-    demo: <ArrayDemo />,           // BadCasePanel + GoodCasePanel (playground.tsx에서 이전)
+    demo: <ArrayObjectDemo />,     // BadCasePanel + GoodCasePanel (playground.tsx에서 이전)
     code: [
       { label: "❌ push",    snippet: BAD_LIST_SNIPPET, useClient: true },
       { label: "✅ spread",  snippet: GOOD_LIST_SNIPPET, useClient: true },

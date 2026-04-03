@@ -67,8 +67,11 @@
 src/features/stage-XX-[name]/
 ├── theory.tsx          # 이론 패널 (초딩/개발자 이중 설명)
 ├── playground.tsx      # 인터렉티브 실험실
-└── code-viewer.tsx     # 핵심 코드 + 문법 강조
+├── code-viewer.tsx     # 핵심 코드 + 문법 강조
+└── combined.tsx        # (선택) Combined View — 이론+데모+코드 통합 (TopicTab[] 배열 기반)
 ```
+
+> Stage 01은 `combined.tsx` 적용됨. Stage 02~20은 theory/playground/code-viewer 3파일 구조 사용 예정.
 
 `theory.tsx` 내부 패턴 (실제 구현 기준):
 ```tsx

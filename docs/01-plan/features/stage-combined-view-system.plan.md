@@ -404,17 +404,17 @@ export default function ImmerExample() {
 
 ## 검증 체크리스트
 
-- [ ] `/stage/immutability` — 기존 3탭 stepper 없음, 3-topic 탭 표시
-- [ ] Tab 1: 일반변수 버튼 → 화면 안 바뀜 / useState 버튼 → 즉시 반영
-- [ ] Tab 2: Bad(push) / Good(spread) 나란히, 메모리 주소 시각화
-- [ ] Tab 3: Immer produce 데모 동작
-- [ ] 각 탭 코드 스니펫 복사 버튼 → 클립보드 복사
-- [ ] `"use client"` 주석 코드 상단에 포함됨
-- [ ] child/dev 토글 → 이론 설명 전환 (각 탭마다)
-- [ ] `/stage/rendering` 등 다른 스테이지 → 기존 3탭 그대로 유지
-- [ ] stages.ts Stage 09: key-props / 15: error-boundary / 20: use-ref-deep
-- [ ] TypeScript 에러 0건
-- [ ] 빌드 성공
+- [x] `/stage/immutability` — 기존 3탭 stepper 없음, 3-topic 탭 표시
+- [x] Tab 1: 일반변수 버튼 → 화면 안 바뀜 / useState 버튼 → 즉시 반영
+- [x] Tab 2: Bad(push) / Good(spread) 나란히, 메모리 주소 시각화
+- [x] Tab 3: Immer produce 데모 동작
+- [x] 각 탭 코드 스니펫 복사 버튼 → 클립보드 복사
+- [x] `"use client"` 주석 코드 상단에 포함됨
+- [x] child/dev 토글 → 이론 설명 전환 (각 탭마다)
+- [x] `/stage/rendering` 등 다른 스테이지 → 기존 3탭 그대로 유지
+- [x] stages.ts Stage 09: key-props / 15: error-boundary / 20: use-ref-deep
+- [x] TypeScript 에러 0건
+- [x] 빌드 성공
 
 ---
 
