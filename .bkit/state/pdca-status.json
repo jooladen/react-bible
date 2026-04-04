@@ -1,6 +1,6 @@
 {
   "version": "3.0",
-  "lastUpdated": "2026-04-03T19:08:02.059Z",
+  "lastUpdated": "2026-04-04T04:07:51.793Z",
   "activeFeatures": [
     "react-bible",
     "stores",
@@ -8,7 +8,10 @@
     "layout",
     "providers",
     "[slug]",
-    "stage-01-immutability"
+    "stage-01-immutability",
+    "learn",
+    "basicmerge",
+    "fiber"
   ],
   "primaryFeature": "react-bible",
   "features": {
@@ -119,6 +122,45 @@
         "lastUpdated": "2026-04-03T19:08:02.053Z"
       },
       "lastFile": "C:\\Users\\jooladen\\Desktop\\claude-code2\\react-bible\\src\\features\\stage-01-immutability\\combined.tsx"
+    },
+    "learn": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-04-04T02:14:30.143Z",
+        "lastUpdated": "2026-04-04T03:31:15.051Z"
+      },
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\claude-code2\\react-bible\\src\\app\\learn\\layout.tsx"
+    },
+    "basicmerge": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-04-04T03:43:43.118Z",
+        "lastUpdated": "2026-04-04T03:43:43.118Z"
+      },
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\claude-code2\\react-bible\\src\\app\\learn\\immutability\\basicmerge\\page.tsx"
+    },
+    "fiber": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-04-04T04:05:23.208Z",
+        "lastUpdated": "2026-04-04T04:07:51.786Z"
+      },
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\claude-code2\\react-bible\\src\\app\\learn\\immutability\\fiber\\page.tsx"
     }
   },
   "pipeline": {
@@ -129,7 +171,7 @@
   "session": {
     "startedAt": "2026-04-01T13:01:47.628Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-04-03T19:08:02.059Z"
+    "lastActivity": "2026-04-04T04:07:51.793Z"
   },
   "history": [
     {
@@ -1521,6 +1563,66 @@
     {
       "timestamp": "2026-04-03T19:08:02.059Z",
       "feature": "stage-01-immutability",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T02:14:30.150Z",
+      "feature": "learn",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T02:18:24.452Z",
+      "feature": "learn",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T02:20:29.215Z",
+      "feature": "learn",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T03:30:37.937Z",
+      "feature": "learn",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T03:31:15.057Z",
+      "feature": "learn",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T03:43:43.123Z",
+      "feature": "basicmerge",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T04:05:23.214Z",
+      "feature": "fiber",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T04:06:10.412Z",
+      "feature": "fiber",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T04:07:42.271Z",
+      "feature": "fiber",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T04:07:51.792Z",
+      "feature": "fiber",
       "phase": "do",
       "action": "updated"
     }

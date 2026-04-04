@@ -73,6 +73,16 @@ src/features/stage-XX-[name]/
 
 > Stage 01은 `combined.tsx` 적용됨. Stage 02~20은 theory/playground/code-viewer 3파일 구조 사용 예정.
 
+## 샌드박스 (코드 테스트용)
+
+```
+src/app/learn/
+├── layout.tsx                          # all:revert 샌드박스 래퍼 (Tailwind 리셋)
+└── immutability/
+    ├── basicmerge/page.tsx             # BadCounter vs GoodCounter 나란히 비교
+    └── fiber/page.tsx                  # Fiber memoizedState 실시간 시각화
+```
+
 `theory.tsx` 내부 패턴 (실제 구현 기준):
 ```tsx
 "use client"

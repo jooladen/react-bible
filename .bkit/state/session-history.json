@@ -142,5 +142,21 @@
     "feature": null,
     "phase": null,
     "progress": null
+  },
+  {
+    "sessionId": "0554401d-1510-4093-8a6c-8499aced2281",
+    "reason": "prompt_input_exit",
+    "endedAt": "2026-04-04T01:50:56.262Z",
+    "feature": null,
+    "phase": null,
+    "progress": null
+  },
+  {
+    "sessionId": "c4f79c6c-85d3-43ec-ae64-4d096862020b",
+    "reason": "clear",
+    "endedAt": "2026-04-04T01:51:33.951Z",
+    "feature": null,
+    "phase": null,
+    "progress": null
   }
 ]
