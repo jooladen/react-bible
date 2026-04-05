@@ -70,7 +70,7 @@ export function StageLayout({
   }
 
   return (
-    <div className="flex flex-col md:h-full">
+    <div className="flex h-full flex-col">
       {/* Stage header */}
       <div className="border-b border-border bg-background px-6 py-4">
         <div className="flex items-start justify-between">
@@ -139,14 +139,14 @@ export function StageLayout({
       </div>
 
       {/* Content area */}
-      <div className={`md:flex-1 md:overflow-auto${combined ? " flex flex-col" : ""}`}>
+      <div className={`flex-1 overflow-auto${combined ? " flex flex-col" : ""}`}>
         {combined ? (
           <>
             {/* combined 모드: TheoryModeToggle 유지 + combined 컴포넌트 직접 렌더링 */}
             <div className="shrink-0 border-b border-border bg-background">
               <TheoryModeToggle />
             </div>
-            <div className="md:flex-1 md:overflow-auto">{combined}</div>
+            <div className="flex-1 overflow-auto">{combined}</div>
           </>
         ) : (
           <>
@@ -185,7 +185,7 @@ export function StageLayout({
       </div>
 
       {/* 이전 / 다음 내비게이션 + 학습 완료 버튼 */}
-      <div className="flex shrink-0 items-center justify-between border-t border-border bg-background px-6 py-3 fixed bottom-[45px] left-0 right-0 z-20 md:relative md:bottom-auto md:left-auto md:right-auto md:z-auto">
+      <div className="flex shrink-0 items-center justify-between border-t border-border bg-background px-6 py-3">
         {prevStage ? (
           <button
             onClick={() => router.push(`/stage/${prevStage.slug}`)}

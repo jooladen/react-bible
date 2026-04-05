@@ -50,7 +50,7 @@ export function CombinedStageView({ tabs }: CombinedStageViewProps) {
   }
 
   return (
-    <div className="flex flex-col md:h-full">
+    <div className="flex h-full flex-col">
       {/* 데스크탑 주제 탭 — isDesktop 조건부 렌더링 (Tailwind v4 충돌 방지) */}
       {/* Design Ref: §2.1 — JS 상태로 모바일/데스크탑 분기 */}
       {isDesktop && <div className="flex gap-1 border-b border-border bg-background px-4 pt-3">
@@ -88,8 +88,8 @@ export function CombinedStageView({ tabs }: CombinedStageViewProps) {
           className={cn(
             "bg-background/50 px-6 py-4",
             currentTab.variant === "deepdive"
-              ? "overflow-auto md:flex-1"
-              : "max-h-[35vh] overflow-auto border-b border-border md:max-h-none"
+              ? "flex-1 overflow-auto"
+              : "max-h-[20vh] overflow-auto border-b border-border md:max-h-none"
           )}
         >
           {mode === "child" ? currentTab.theory.child : currentTab.theory.dev}
@@ -105,7 +105,7 @@ export function CombinedStageView({ tabs }: CombinedStageViewProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.15 }}
-            className="flex flex-col md:flex-1 md:flex-row md:overflow-auto"
+            className="flex flex-1 flex-col overflow-auto md:flex-row"
           >
             {/* 모바일 데모/코드 세그먼티드 탭 — code 없으면 숨김 */}
             {currentTab.code && currentTab.code.length > 0 && (
@@ -138,7 +138,7 @@ export function CombinedStageView({ tabs }: CombinedStageViewProps) {
             {/* 라이브 데모 (좌 / 모바일 상) */}
             <div
               className={cn(
-                "border-b border-border p-3 pb-6 md:flex-1 md:overflow-auto md:border-b-0 md:p-6",
+                "flex-1 overflow-auto border-b border-border p-3 pb-6 md:border-b-0 md:p-6",
                 currentTab.code && currentTab.code.length > 0 && "md:border-r",
                 !isDesktop && currentTab.code && currentTab.code.length > 0 && mobileSection !== "demo" && "hidden"
               )}
@@ -153,7 +153,7 @@ export function CombinedStageView({ tabs }: CombinedStageViewProps) {
             {currentTab.code && currentTab.code.length > 0 && (
               <div
                 className={cn(
-                  "flex flex-col p-3 md:flex-1 md:p-6",
+                  "flex flex-1 flex-col p-3 md:p-6",
                   !isDesktop && mobileSection !== "code" && "hidden"
                 )}
               >
@@ -190,7 +190,7 @@ export function CombinedStageView({ tabs }: CombinedStageViewProps) {
                       )}
                     />
                   </div>
-                  <pre className="min-h-[200px] overflow-auto rounded-lg bg-zinc-900 p-4 font-mono text-xs leading-relaxed text-zinc-100 whitespace-pre-wrap light:bg-zinc-50 light:text-zinc-800 md:h-full">
+                  <pre className="h-full overflow-auto rounded-lg bg-zinc-900 p-4 font-mono text-xs leading-relaxed text-zinc-100 whitespace-pre-wrap light:bg-zinc-50 light:text-zinc-800">
                     {buildSnippetText(
                       currentTab.code[activeCode]?.snippet ?? "",
                       currentTab.code[activeCode]?.useClient
