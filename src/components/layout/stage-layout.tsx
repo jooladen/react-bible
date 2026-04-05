@@ -185,7 +185,7 @@ export function StageLayout({
       </div>
 
       {/* 이전 / 다음 내비게이션 + 학습 완료 버튼 */}
-      <div className="flex shrink-0 items-center justify-between border-t border-border bg-background px-6 py-3 fixed bottom-12 left-0 right-0 z-20 md:relative md:bottom-auto md:left-auto md:right-auto md:z-auto">
+      <div className="flex shrink-0 items-center justify-between border-t border-border bg-background px-6 py-3 fixed bottom-[45px] left-0 right-0 z-20 md:relative md:bottom-auto md:left-auto md:right-auto md:z-auto">
         {prevStage ? (
           <button
             onClick={() => router.push(`/stage/${prevStage.slug}`)}
