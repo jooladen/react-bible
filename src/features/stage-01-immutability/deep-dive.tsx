@@ -21,7 +21,7 @@ function Good({ children }: { children: React.ReactNode }) {
 
 function DeepDiveChild() {
   return (
-    <div className="space-y-8 text-sm text-foreground max-w-3xl pb-8">
+    <div className="space-y-12 text-sm text-foreground max-w-3xl pb-8">
 
       {/* 도입 */}
       {/* <p className="text-muted-foreground leading-relaxed">
@@ -305,7 +305,7 @@ function DeepDiveChild() {
 
 function DeepDiveDev() {
   return (
-    <div className="space-y-8 text-sm text-foreground max-w-3xl pb-8">
+    <div className="space-y-12 text-sm text-foreground max-w-3xl pb-8">
 
       {/* 도입 */}
       <p className="text-muted-foreground leading-relaxed">
