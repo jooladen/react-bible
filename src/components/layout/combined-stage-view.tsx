@@ -138,7 +138,7 @@ export function CombinedStageView({ tabs }: CombinedStageViewProps) {
             {/* 라이브 데모 (좌 / 모바일 상) */}
             <div
               className={cn(
-                "flex-1 overflow-auto border-b border-border p-3 md:border-b-0 md:p-6",
+                "flex-1 overflow-auto border-b border-border p-3 pb-6 md:border-b-0 md:p-6",
                 currentTab.code && currentTab.code.length > 0 && "md:border-r",
                 !isDesktop && currentTab.code && currentTab.code.length > 0 && mobileSection !== "demo" && "hidden"
               )}

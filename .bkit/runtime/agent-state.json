@@ -1,14 +1,25 @@
 {
   "version": "1.0",
-  "enabled": false,
+  "enabled": true,
   "teamName": "",
   "feature": "react-bible",
   "pdcaPhase": "do",
   "orchestrationPattern": "leader",
   "ctoAgent": "opus",
-  "startedAt": "2026-04-05T19:00:51.874Z",
-  "lastUpdated": "2026-04-05T20:09:52.122Z",
-  "teammates": [],
+  "startedAt": "2026-04-05T22:10:22.524Z",
+  "lastUpdated": "2026-04-05T22:10:56.147Z",
+  "teammates": [
+    {
+      "name": "a8082ad1998df9338",
+      "role": "Explore",
+      "model": "sonnet",
+      "status": "completed",
+      "currentTask": null,
+      "taskId": null,
+      "startedAt": "2026-04-05T22:10:22.529Z",
+      "lastActivityAt": "2026-04-05T22:10:56.138Z"
+    }
+  ],
   "progress": {
     "totalTasks": 0,
     "completedTasks": 0,
@@ -17,5 +28,5 @@
     "pendingTasks": 0
   },
   "recentMessages": [],
-  "sessionId": "6c3413fb-9c22-4a25-9d57-9617c792b62a"
+  "sessionId": "bf431ebe-9791-4abf-b101-1d0be566a48c"
 }
