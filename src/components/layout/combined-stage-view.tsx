@@ -89,7 +89,7 @@ export function CombinedStageView({ tabs }: CombinedStageViewProps) {
             "bg-background/50 px-6 py-4",
             currentTab.variant === "deepdive"
               ? "flex-1 overflow-auto"
-              : "border-b border-border"
+              : "max-h-[35vh] overflow-auto border-b border-border md:max-h-none"
           )}
         >
           {mode === "child" ? currentTab.theory.child : currentTab.theory.dev}
@@ -138,7 +138,7 @@ export function CombinedStageView({ tabs }: CombinedStageViewProps) {
             {/* 라이브 데모 (좌 / 모바일 상) */}
             <div
               className={cn(
-                "flex-1 overflow-auto border-b border-border p-6 md:border-b-0",
+                "flex-1 overflow-auto border-b border-border p-3 md:border-b-0 md:p-6",
                 currentTab.code && currentTab.code.length > 0 && "md:border-r",
                 !isDesktop && currentTab.code && currentTab.code.length > 0 && mobileSection !== "demo" && "hidden"
               )}
@@ -153,7 +153,7 @@ export function CombinedStageView({ tabs }: CombinedStageViewProps) {
             {currentTab.code && currentTab.code.length > 0 && (
               <div
                 className={cn(
-                  "flex flex-1 flex-col p-6",
+                  "flex flex-1 flex-col p-3 md:p-6",
                   !isDesktop && mobileSection !== "code" && "hidden"
                 )}
               >
