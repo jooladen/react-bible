@@ -89,7 +89,7 @@ function FunnyStoryContent() {
         </p>
 
         {/* 1. 왜 장부가 필요한가 */}
-        <section className="space-y-3">
+        <section className="space-y-3 pt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             1. 왜 "똥 끊기"에 "장부"가 필요한가? (The Logic)
           </h3>
@@ -116,7 +116,7 @@ function FunnyStoryContent() {
         </section>
 
         {/* 2. 주어와 목적어로 보는 파이버의 행동 */}
-        <section className="space-y-3">
+        <section className="space-y-3 pt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             2. 주어와 목적어로 보는 파이버의 행동 (누가 누구에게)
           </h3>
@@ -149,7 +149,7 @@ function FunnyStoryContent() {
         </section>
 
         {/* 3. 비교표 */}
-        <section className="space-y-3">
+        <section className="space-y-3 pt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             3. "장부"가 곧 "똥 끊기"의 핵심 부품인 이유
           </h3>
@@ -197,7 +197,7 @@ function FunnyStoryContent() {
         </p>
 
         {/* 1. 소스 매핑 */}
-        <section className="space-y-3">
+        <section className="space-y-3 pt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             1. 파이버의 '똥 끊기' 능력을 강조한 소스 매핑
           </h3>
@@ -231,7 +231,7 @@ function FunnyStoryContent() {
         </section>
 
         {/* 2. 왜 바꿔야 하나 */}
-        <section className="space-y-3">
+        <section className="space-y-3 pt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             2. 왜 문구를 이렇게 바꿔야 하나요? (이유와 고통 해결)
           </h3>
@@ -263,7 +263,7 @@ function FunnyStoryContent() {
         </section>
 
         {/* 3. 초딩용 + 개발자용 통합 설명 */}
-        <section className="space-y-3">
+        <section className="space-y-3 pt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             3. 초딩용 + 개발자용 통합 설명 (보완판)
           </h3>
@@ -316,7 +316,7 @@ function FunnyStoryContent() {
         </p>
 
         {/* 1. 3단계 긴급 작전 */}
-        <section className="space-y-3">
+        <section className="space-y-3 pt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             1. 사용자가 클릭하는 순간의 3단계 긴급 작전
           </h3>
@@ -368,7 +368,7 @@ function FunnyStoryContent() {
         </section>
 
         {/* 2. 소스 코드 매핑 */}
-        <section className="space-y-3">
+        <section className="space-y-3 pt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             2. 소스 코드 매핑 (긴급 중단 상황)
           </h3>
@@ -390,7 +390,7 @@ function FunnyStoryContent() {
         </section>
 
         {/* 3. 비교표 */}
-        <section className="space-y-3">
+        <section className="space-y-3 pt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             3. 왜 이렇게 "고통스럽게" 설계했나요?
           </h3>
@@ -437,7 +437,7 @@ function FunnyStoryContent() {
         </p>
 
         {/* 1. 기본 vs useTransition 차이 */}
-        <section className="space-y-3">
+        <section className="space-y-3 pt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             1. 기본 소스 vs useTransition 차이 (누가 무엇을?)
           </h3>
@@ -471,7 +471,7 @@ function FunnyStoryContent() {
         </section>
 
         {/* 2. 소스 코드 비교 */}
-        <section className="space-y-3">
+        <section className="space-y-3 pt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             2. 소스 코드 비교 매핑
           </h3>
@@ -510,7 +510,7 @@ function FunnyStoryContent() {
         </section>
 
         {/* 3. 왜 써야만 하나 */}
-        <section className="space-y-3">
+        <section className="space-y-3 pt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             3. 왜 useTransition을 써야만 작동하게 만들었나요?
           </h3>
@@ -571,7 +571,7 @@ function FunnyStoryDev() {
       </p>
 
       {/* ── 1. Concurrent React ── */}
-      <section className="space-y-4">
+      <section className="space-y-4 pt-4">
         <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
           1. Concurrent React: 가상 스택과 선점형 스케줄링
         </h3>
@@ -619,7 +619,7 @@ function FunnyStoryDev() {
       </section>
 
       {/* ── 2. useTransition: Lane 제어 ── */}
-      <section className="space-y-4">
+      <section className="space-y-4 pt-4">
         <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
           2. useTransition: 렌더링 우선순위의 비트마스크(Lane) 제어
         </h3>
@@ -665,7 +665,7 @@ function FunnyStoryDev() {
       </section>
 
       {/* ── 3. 실무 아키텍처 소스 분석 ── */}
-      <section className="space-y-3">
+      <section className="space-y-3 pt-4">
         <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
           3. 실무 아키텍처 소스 분석 (Advanced Spec)
         </h3>
@@ -700,7 +700,7 @@ function FunnyStoryDev() {
       </section>
 
       {/* ── 4. 시니어의 통찰 ── */}
-      <section className="space-y-4">
+      <section className="space-y-4 pt-4">
         <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
           4. 시니어의 통찰: 왜 기본값이 아닐까? (Design Trade-off)
         </h3>

@@ -32,7 +32,7 @@ function DeepDiveChild() {
       </p> */}
 
       {/* ── 1. 리액트 엔진 분석 소스 ── */}
-      <section className="space-y-3">
+      <section className="space-y-3 pt-4">
         <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
           1. 리액트 엔진 분석 소스 (The Action Script)
         </h3>
@@ -60,7 +60,7 @@ function DeepDiveChild() {
       </section>
 
       {/* ── 2. 리액트 마을의 4인방 ── */}
-      <section className="space-y-4">
+      <section className="space-y-4 pt-4">
         <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
           2. 리액트 마을의 4인방: "누가, 무엇을, 왜?"
         </h3>
@@ -128,7 +128,7 @@ function DeepDiveChild() {
       </section>
 
       {/* ── 3. 전체 흐름 ── */}
-      <section className="space-y-4">
+      <section className="space-y-4 pt-4">
         <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
           3. 전체 흐름: 최초 로딩부터 업데이트까지 (The Lifecycle)
         </h3>
@@ -155,7 +155,7 @@ function DeepDiveChild() {
       </section>
 
       {/* ── 4. 시니어의 통찰 ── */}
-      <section className="space-y-4">
+      <section className="space-y-4 pt-4">
         <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
           4. 시니어의 통찰: "이래서 리액트가 꼬였던 겁니다"
         </h3>
@@ -315,7 +315,7 @@ function DeepDiveDev() {
       </p>
 
       {/* ── 1. 리액트 엔진 분석 소스 ── */}
-      <section className="space-y-3">
+      <section className="space-y-3 pt-4">
         <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
           1. 리액트 엔진 분석 소스 (The System Call)
         </h3>
@@ -354,7 +354,7 @@ function DeepDiveDev() {
       </section>
 
       {/* ── 2. 리액트 커널의 4대 핵심 모듈 ── */}
-      <section className="space-y-4">
+      <section className="space-y-4 pt-4">
         <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
           2. 리액트 커널의 4대 핵심 모듈 (Architectural Deep-Dive)
         </h3>
@@ -420,7 +420,7 @@ function DeepDiveDev() {
       </section>
 
       {/* ── 3. 전체 흐름 ── */}
-      <section className="space-y-4">
+      <section className="space-y-4 pt-4">
         <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
           3. 전체 흐름: 가상 런타임의 라이프사이클
         </h3>
@@ -455,7 +455,7 @@ function DeepDiveDev() {
       </section>
 
       {/* ── 4. 시니어의 통찰 ── */}
-      <section className="space-y-4">
+      <section className="space-y-4 pt-4">
         <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
           4. 시니어의 통찰: "엔진의 내부 결합도를 이해하라"
         </h3>
