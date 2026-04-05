@@ -128,7 +128,7 @@ function DeepDiveChild() {
       </section>
 
       {/* ── 3. 전체 흐름 ── */}
-      <section className="space-y-4 pt-4">
+      <section className="space-y-4 pt-4 mt-4">
         <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
           3. 전체 흐름: 최초 로딩부터 업데이트까지 (The Lifecycle)
         </h3>

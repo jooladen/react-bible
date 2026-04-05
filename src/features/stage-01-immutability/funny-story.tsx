@@ -78,7 +78,7 @@ function FunnyStoryContent() {
         </QuestionBox>
 
         {/* 도입 */}
-        <p className="text-muted-foreground leading-relaxed">
+        <p className="text-muted-foreground leading-relaxed mt-4">
           오, 아주 날카로운 질문입니다! <Em>"똥 끊기(Incremental Rendering)"</Em>와 <Em>"장부(State Management)"</Em>라는
           두 비유가 서로 안 맞는 것처럼 보일 수 있지만, 사실 <Em>파이버(Fiber)</Em>라는 녀석은 이 두 가지를 동시에
           해내기 위해 탄생한 아주 영리한 구조체입니다.
@@ -89,7 +89,7 @@ function FunnyStoryContent() {
         </p>
 
         {/* 1. 왜 장부가 필요한가 */}
-        <section className="space-y-3 pt-4">
+        <section className="space-y-3 pt-4 mt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             1. 왜 "똥 끊기"에 "장부"가 필요한가? (The Logic)
           </h3>
@@ -116,7 +116,7 @@ function FunnyStoryContent() {
         </section>
 
         {/* 2. 주어와 목적어로 보는 파이버의 행동 */}
-        <section className="space-y-3 pt-4">
+        <section className="space-y-3 pt-4 mt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             2. 주어와 목적어로 보는 파이버의 행동 (누가 누구에게)
           </h3>
@@ -149,7 +149,7 @@ function FunnyStoryContent() {
         </section>
 
         {/* 3. 비교표 */}
-        <section className="space-y-3 pt-4">
+        <section className="space-y-3 pt-4 mt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             3. "장부"가 곧 "똥 끊기"의 핵심 부품인 이유
           </h3>
@@ -197,7 +197,7 @@ function FunnyStoryContent() {
         </p>
 
         {/* 1. 소스 매핑 */}
-        <section className="space-y-3 pt-4">
+        <section className="space-y-3 pt-4 mt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             1. 파이버의 '똥 끊기' 능력을 강조한 소스 매핑
           </h3>
@@ -263,7 +263,7 @@ function FunnyStoryContent() {
         </section>
 
         {/* 3. 초딩용 + 개발자용 통합 설명 */}
-        <section className="space-y-3 pt-4">
+        <section className="space-y-3 pt-4 mt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             3. 초딩용 + 개발자용 통합 설명 (보완판)
           </h3>
@@ -309,14 +309,14 @@ function FunnyStoryContent() {
         </QuestionBox>
 
         {/* 도입 */}
-        <p className="text-muted-foreground leading-relaxed">
+        <p className="text-muted-foreground leading-relaxed  mt-4">
           네, 정확합니다! 바로 그 지점이 리액트가 <Em>파이버(Fiber)</Em>라는 새로운 엔진을 도입한 핵심 이유입니다.
           20년 차 시니어의 눈으로 보면 이것은 <Em>'협력적 멀티태스킹(Cooperative Multitasking)'</Em>이
           프런트엔드에 구현된 모습입니다.
         </p>
 
         {/* 1. 3단계 긴급 작전 */}
-        <section className="space-y-3 pt-4">
+        <section className="space-y-3 pt-4  mt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             1. 사용자가 클릭하는 순간의 3단계 긴급 작전
           </h3>
@@ -368,7 +368,7 @@ function FunnyStoryContent() {
         </section>
 
         {/* 2. 소스 코드 매핑 */}
-        <section className="space-y-3 pt-4">
+        <section className="space-y-3 pt-4  mt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             2. 소스 코드 매핑 (긴급 중단 상황)
           </h3>
@@ -437,7 +437,7 @@ function FunnyStoryContent() {
         </p>
 
         {/* 1. 기본 vs useTransition 차이 */}
-        <section className="space-y-3 pt-4">
+        <section className="space-y-3 pt-4 mt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             1. 기본 소스 vs useTransition 차이 (누가 무엇을?)
           </h3>
@@ -471,7 +471,7 @@ function FunnyStoryContent() {
         </section>
 
         {/* 2. 소스 코드 비교 */}
-        <section className="space-y-3 pt-4">
+        <section className="space-y-3 pt-4 mt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             2. 소스 코드 비교 매핑
           </h3>
@@ -510,7 +510,7 @@ function FunnyStoryContent() {
         </section>
 
         {/* 3. 왜 써야만 하나 */}
-        <section className="space-y-3 pt-4">
+        <section className="space-y-3 pt-4 mt-4">
           <h3 className="text-base font-bold text-foreground border-b border-border pb-2">
             3. 왜 useTransition을 써야만 작동하게 만들었나요?
           </h3>
