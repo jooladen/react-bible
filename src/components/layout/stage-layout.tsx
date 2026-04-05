@@ -196,7 +196,7 @@ export function StageLayout({
       {/* 이전 / 다음 내비게이션 + 학습 완료 버튼 */}
       <div className={cn(
         "flex shrink-0 items-center justify-between border-t border-border bg-background px-6 py-3",
-        !isDesktop && "sticky bottom-16 z-20"
+        !isDesktop && "sticky bottom-[45px] z-20"
       )}>
         {prevStage ? (
           <button
