@@ -6,6 +6,8 @@ import { useState, useRef, useEffect } from "react"
 import { produce } from "immer"
 import { CombinedStageView } from "@/components/layout/combined-stage-view"
 import type { TopicTab } from "@/types/combined-stage"
+import { IMMUTABILITY_DEEP_DIVE } from "./deep-dive"
+import { IMMUTABILITY_FUNNY_STORY } from "./funny-story"
 
 // ─── 공통 유틸 ────────────────────────────────────────────────────────────────
 
@@ -773,6 +775,8 @@ const TOPICS: TopicTab[] = [
       { label: "✅ produce()", snippet: GOOD_IMMER_SNIPPET, useClient: true },
     ],
   },
+  IMMUTABILITY_DEEP_DIVE,
+  IMMUTABILITY_FUNNY_STORY,
 ]
 
 // ─── Export ───────────────────────────────────────────────────────────────────

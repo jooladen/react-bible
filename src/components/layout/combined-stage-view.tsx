@@ -59,7 +59,7 @@ export function CombinedStageView({ tabs }: CombinedStageViewProps) {
         })}
       </div>
 
-      {/* 이론 영역 */}
+      {/* 이론 영역 — deepdive면 flex-1 풀스크린, 아니면 border-b 고정 */}
       <AnimatePresence mode="wait">
         <motion.div
           key={`theory-${activeTab}-${mode}`}
@@ -67,75 +67,82 @@ export function CombinedStageView({ tabs }: CombinedStageViewProps) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -6 }}
           transition={{ duration: 0.12 }}
-          className="border-b border-border bg-background/50 px-6 py-4"
+          className={cn(
+            "bg-background/50 px-6 py-4",
+            currentTab.variant === "deepdive"
+              ? "flex-1 overflow-auto"
+              : "border-b border-border"
+          )}
         >
           {mode === "child" ? currentTab.theory.child : currentTab.theory.dev}
         </motion.div>
       </AnimatePresence>
 
-      {/* 데모 + 코드 영역 */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={`content-${activeTab}`}
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          transition={{ duration: 0.15 }}
-          className="flex flex-1 flex-col overflow-auto md:flex-row"
-        >
-          {/* 라이브 데모 (좌 / 모바일 상) */}
-          <div className="flex-1 overflow-auto border-b border-border p-6 md:border-b-0 md:border-r">
-            <h4 className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              라이브 데모
-            </h4>
-            {currentTab.demo}
-          </div>
-
-          {/* 코드 스니펫 (우 / 모바일 하) */}
-          <div className="flex flex-1 flex-col p-6">
-            <div className="mb-3 flex items-center justify-between">
-              <h4 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                코드 스니펫
+      {/* 데모 + 코드 영역 — deepdive면 렌더링 안 함 */}
+      {currentTab.variant !== "deepdive" && (
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={`content-${activeTab}`}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.15 }}
+            className="flex flex-1 flex-col overflow-auto md:flex-row"
+          >
+            {/* 라이브 데모 (좌 / 모바일 상) */}
+            <div className="flex-1 overflow-auto border-b border-border p-6 md:border-b-0 md:border-r">
+              <h4 className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                라이브 데모
               </h4>
-              {/* 코드 mini-tab */}
-              <div className="flex gap-1">
-                {currentTab.code.map((c, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setActiveCode(i)}
-                    className={cn(
-                      "rounded px-2.5 py-1 text-xs font-medium transition-all",
-                      activeCode === i
-                        ? "bg-indigo-500/20 text-indigo-300 light:bg-teal-100 light:text-teal-800"
-                        : "text-muted-foreground hover:bg-accent hover:text-foreground"
-                    )}
-                  >
-                    {c.label}
-                  </button>
-                ))}
-              </div>
+              {currentTab.demo}
             </div>
 
-            {/* 코드 블록 */}
-            <div className="relative flex-1">
-              <div className="absolute right-3 top-3 z-10">
-                <CopyButton
-                  text={buildSnippetText(
-                    currentTab.code[activeCode].snippet,
-                    currentTab.code[activeCode].useClient
-                  )}
-                />
+            {/* 코드 스니펫 (우 / 모바일 하) */}
+            <div className="flex flex-1 flex-col p-6">
+              <div className="mb-3 flex items-center justify-between">
+                <h4 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  코드 스니펫
+                </h4>
+                {/* 코드 mini-tab */}
+                <div className="flex gap-1">
+                  {currentTab.code?.map((c, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActiveCode(i)}
+                      className={cn(
+                        "rounded px-2.5 py-1 text-xs font-medium transition-all",
+                        activeCode === i
+                          ? "bg-indigo-500/20 text-indigo-300 light:bg-teal-100 light:text-teal-800"
+                          : "text-muted-foreground hover:bg-accent hover:text-foreground"
+                      )}
+                    >
+                      {c.label}
+                    </button>
+                  ))}
+                </div>
               </div>
-              <pre className="h-full overflow-auto rounded-lg bg-zinc-900 p-4 font-mono text-xs leading-relaxed text-zinc-100 whitespace-pre-wrap light:bg-zinc-50 light:text-zinc-800">
-                {buildSnippetText(
-                  currentTab.code[activeCode].snippet,
-                  currentTab.code[activeCode].useClient
-                )}
-              </pre>
+
+              {/* 코드 블록 */}
+              <div className="relative flex-1">
+                <div className="absolute right-3 top-3 z-10">
+                  <CopyButton
+                    text={buildSnippetText(
+                      currentTab.code?.[activeCode]?.snippet ?? "",
+                      currentTab.code?.[activeCode]?.useClient
+                    )}
+                  />
+                </div>
+                <pre className="h-full overflow-auto rounded-lg bg-zinc-900 p-4 font-mono text-xs leading-relaxed text-zinc-100 whitespace-pre-wrap light:bg-zinc-50 light:text-zinc-800">
+                  {buildSnippetText(
+                    currentTab.code?.[activeCode]?.snippet ?? "",
+                    currentTab.code?.[activeCode]?.useClient
+                  )}
+                </pre>
+              </div>
             </div>
-          </div>
-        </motion.div>
-      </AnimatePresence>
+          </motion.div>
+        </AnimatePresence>
+      )}
     </div>
   )
 }

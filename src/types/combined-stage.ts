@@ -9,12 +9,13 @@ export type CodeSnippet = {
 
 export type TopicTab = {
   id: string
-  label: string       // 탭 레이블 — "일반 변수", "배열/객체", "Immer"
-  icon?: string       // 선택적 이모지 아이콘
+  label: string         // 탭 레이블 — "일반 변수", "배열/객체", "Immer"
+  icon?: string         // 선택적 이모지 아이콘
+  variant?: "demo" | "deepdive"  // 없으면 "demo" 동작 (기존 호환)
   theory: {
-    child: ReactNode  // 🟢 초딩 모드 설명
-    dev: ReactNode    // 🔵 개발자 모드 설명
+    child: ReactNode    // 🟢 초딩 모드 설명
+    dev: ReactNode      // 🔵 개발자 모드 설명
   }
-  demo: ReactNode     // 라이브 인터랙티브 데모 컴포넌트
-  code: CodeSnippet[] // 1개 이상 (mini-tab으로 전환)
+  demo?: ReactNode      // 라이브 인터랙티브 데모 컴포넌트 (deepdive면 불필요)
+  code?: CodeSnippet[]  // 1개 이상 (mini-tab으로 전환, deepdive면 불필요)
 }
