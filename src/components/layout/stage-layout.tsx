@@ -70,7 +70,7 @@ export function StageLayout({
   }
 
   return (
-    <div className="flex h-full flex-col">
+    <div className="flex flex-col md:h-full">
       {/* Stage header */}
       <div className="border-b border-border bg-background px-6 py-4">
         <div className="flex items-start justify-between">
@@ -139,14 +139,14 @@ export function StageLayout({
       </div>
 
       {/* Content area */}
-      <div className={`flex-1 overflow-auto${combined ? " flex flex-col" : ""}`}>
+      <div className={`md:flex-1 md:overflow-auto${combined ? " flex flex-col" : ""}`}>
         {combined ? (
           <>
             {/* combined 모드: TheoryModeToggle 유지 + combined 컴포넌트 직접 렌더링 */}
             <div className="shrink-0 border-b border-border bg-background">
               <TheoryModeToggle />
             </div>
-            <div className="flex-1 overflow-auto">{combined}</div>
+            <div className="md:flex-1 md:overflow-auto">{combined}</div>
           </>
         ) : (
           <>
