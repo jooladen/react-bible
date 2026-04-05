@@ -1,6 +1,6 @@
 {
   "version": "3.0",
-  "lastUpdated": "2026-04-05T22:21:26.322Z",
+  "lastUpdated": "2026-04-05T22:28:48.955Z",
   "activeFeatures": [
     "react-bible",
     "stores",
@@ -80,9 +80,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-04-01T13:03:00.615Z",
-        "lastUpdated": "2026-04-05T22:21:26.317Z"
+        "lastUpdated": "2026-04-05T22:28:48.949Z"
       },
-      "lastFile": "C:\\Users\\jooladen\\Desktop\\claude-code2\\react-bible\\src\\components\\layout\\stage-layout.tsx"
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\claude-code2\\react-bible\\src\\components\\layout\\main-layout.tsx"
     },
     "providers": {
       "phase": "do",
@@ -171,7 +171,7 @@
   "session": {
     "startedAt": "2026-04-01T13:01:47.628Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-04-05T22:21:26.322Z"
+    "lastActivity": "2026-04-05T22:28:48.955Z"
   },
   "history": [
     {
@@ -1970,6 +1970,18 @@
     },
     {
       "timestamp": "2026-04-05T22:21:26.321Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T22:28:40.917Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T22:28:48.954Z",
       "feature": "layout",
       "phase": "do",
       "action": "updated"
