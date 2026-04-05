@@ -37,6 +37,7 @@ export function StageLayout({
   combined,
 }: StageLayoutProps) {
   const [activeTab, setActiveTab] = useState<Tab>("theory")
+  const [isDesktop, setIsDesktop] = useState(true)
   const { mode } = useExplanationStore()
   const { markDone, isCompleted } = useProgressStore()
   const router = useRouter()
@@ -50,6 +51,14 @@ export function StageLayout({
   useEffect(() => {
     localStorage.setItem(LAST_STAGE_KEY, stage.slug)
   }, [stage.slug])
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)")
+    setIsDesktop(mq.matches)
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches)
+    mq.addEventListener("change", handler)
+    return () => mq.removeEventListener("change", handler)
+  }, [])
 
   // 키보드 화살표 이동
   useEffect(() => {
@@ -70,7 +79,7 @@ export function StageLayout({
   }
 
   return (
-    <div className="flex h-full flex-col">
+    <div className={isDesktop ? "flex h-full flex-col" : "flex flex-col"}>
       {/* Stage header */}
       <div className="border-b border-border bg-background px-6 py-4">
         <div className="flex items-start justify-between">
@@ -139,14 +148,14 @@ export function StageLayout({
       </div>
 
       {/* Content area */}
-      <div className={`flex-1 overflow-auto${combined ? " flex flex-col" : ""}`}>
+      <div className={`${isDesktop ? "flex-1 overflow-auto" : ""}${combined ? " flex flex-col" : ""}`}>
         {combined ? (
           <>
             {/* combined 모드: TheoryModeToggle 유지 + combined 컴포넌트 직접 렌더링 */}
             <div className="shrink-0 border-b border-border bg-background">
               <TheoryModeToggle />
             </div>
-            <div className="flex-1 overflow-auto">{combined}</div>
+            <div className={isDesktop ? "flex-1 overflow-auto" : ""}>{combined}</div>
           </>
         ) : (
           <>

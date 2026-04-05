@@ -1,6 +1,6 @@
 {
   "version": "3.0",
-  "lastUpdated": "2026-04-05T22:43:52.987Z",
+  "lastUpdated": "2026-04-05T22:49:07.984Z",
   "activeFeatures": [
     "react-bible",
     "stores",
@@ -80,9 +80,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-04-01T13:03:00.615Z",
-        "lastUpdated": "2026-04-05T22:43:52.981Z"
+        "lastUpdated": "2026-04-05T22:49:07.978Z"
       },
-      "lastFile": "C:\\Users\\jooladen\\Desktop\\claude-code2\\react-bible\\src\\components\\layout\\main-layout.tsx"
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\claude-code2\\react-bible\\src\\components\\layout\\combined-stage-view.tsx"
     },
     "providers": {
       "phase": "do",
@@ -171,7 +171,7 @@
   "session": {
     "startedAt": "2026-04-01T13:01:47.628Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-04-05T22:43:52.987Z"
+    "lastActivity": "2026-04-05T22:49:07.984Z"
   },
   "history": [
     {
@@ -2060,6 +2060,66 @@
     },
     {
       "timestamp": "2026-04-05T22:43:52.986Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T22:47:49.887Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T22:47:58.863Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T22:48:07.902Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T22:48:16.184Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T22:48:25.801Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T22:48:34.328Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T22:48:42.262Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T22:48:50.709Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T22:48:58.423Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T22:49:07.983Z",
       "feature": "layout",
       "phase": "do",
       "action": "updated"
