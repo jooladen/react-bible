@@ -8,6 +8,7 @@ import { CombinedStageView } from "@/components/layout/combined-stage-view"
 import type { TopicTab } from "@/types/combined-stage"
 import { IMMUTABILITY_DEEP_DIVE } from "./deep-dive"
 import { IMMUTABILITY_FUNNY_STORY } from "./funny-story"
+import { IMMUTABILITY_QUIZ } from "./quiz"
 
 // ─── 공통 유틸 ────────────────────────────────────────────────────────────────
 
@@ -730,6 +731,31 @@ export default function ImmerExample() {
   return <button onClick={moveToSeoul}>서울로 이사 (Immer)</button>
 }`
 
+const CRUD_SNIPPET = `import { useState } from "react"
+
+export default function TodoList() {
+  const [todos, setTodos] = useState([
+    { id: 1, text: "리액트 공부", done: false },
+  ])
+
+  // ✅ 추가
+  function add(text: string) {
+    setTodos(prev => [...prev, { id: Date.now(), text, done: false }])
+  }
+
+  // ✅ 수정 (id로 특정 항목 변경)
+  function toggle(id: number) {
+    setTodos(prev =>
+      prev.map(todo => todo.id === id ? { ...todo, done: !todo.done } : todo)
+    )
+  }
+
+  // ✅ 삭제 (id로 특정 항목 제거)
+  function remove(id: number) {
+    setTodos(prev => prev.filter(todo => todo.id !== id))
+  }
+}`
+
 // ─── TOPICS 배열 ──────────────────────────────────────────────────────────────
 
 const TOPICS: TopicTab[] = [
@@ -759,6 +785,7 @@ const TOPICS: TopicTab[] = [
     code: [
       { label: "❌ push", snippet: BAD_LIST_SNIPPET, useClient: true },
       { label: "✅ spread", snippet: GOOD_LIST_SNIPPET, useClient: true },
+      { label: "✅ CRUD 3종", snippet: CRUD_SNIPPET, useClient: true },
     ],
   },
   {
@@ -777,6 +804,7 @@ const TOPICS: TopicTab[] = [
   },
   IMMUTABILITY_DEEP_DIVE,
   IMMUTABILITY_FUNNY_STORY,
+  IMMUTABILITY_QUIZ,
 ]
 
 // ─── Export ───────────────────────────────────────────────────────────────────

@@ -167,3 +167,28 @@
 - [x] "학습 완료" 버튼 클릭 → 사이드바 Progress 바 갱신
 - [x] 페이지 새로고침 후에도 진도 유지 (localStorage persist)
 - [x] TypeScript 에러 0건, 빌드 통과
+
+---
+
+## 7. 변경 이력 (구현 후 추가)
+
+### 2026-04-04: Combined View + 심화 콘텐츠 추가
+
+| 항목 | 내용 |
+|------|------|
+| `deep-dive.tsx` [신규] | Fiber 아키텍처 4인방(Fiber/Scheduler/Reconciler/Renderer) 심화 설명. 초딩/개발자 이중 설명. TOPICS Tab 4로 추가 |
+| `funny-story.tsx` [신규] | Q&A 형식 Fiber 스토리텔링 (Q1~Q4). useTransition·Concurrent Rendering 심화. TOPICS Tab 5로 추가 |
+
+### 2026-04-05: 퀴즈 + CRUD 코드 스니펫 추가
+
+| 항목 | 내용 |
+|------|------|
+| `quiz.tsx` [신규] | 불변성 자가 점검 퀴즈 4문제 (push vs spread / filter vs splice / 객체 수정 / Immer 권장). 즉시 피드백 + 점수 화면. TOPICS Tab 6으로 추가 |
+| CRUD 스니펫 탭 | `combined.tsx` array-object 탭 code 배열에 3번째 탭 추가: 추가(spread)/수정(map)/삭제(filter) 3종 패턴 |
+
+### 추가 성공 기준
+
+- [x] Deep Dive 탭: Fiber 4인방 개념 초딩/개발자 모드 전환 동작
+- [x] Funny Story 탭: Q1~Q4 전부 렌더링, useTransition 설명 포함
+- [x] 퀴즈 탭: 4문제 순환 → 점수 화면 → 다시 도전 동작
+- [x] 배열/객체 탭 코드뷰어: CRUD 3종 탭 추가 (❌push / ✅spread / ✅CRUD 3종)

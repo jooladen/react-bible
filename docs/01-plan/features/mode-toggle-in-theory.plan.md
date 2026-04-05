@@ -2,8 +2,8 @@
 
 **Feature**: `mode-toggle-in-theory`
 **Date**: 2026-04-04
-**Phase**: Plan
-**Status**: Draft
+**Phase**: Done
+**Status**: Done
 
 ---
 

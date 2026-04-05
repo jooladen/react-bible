@@ -2,7 +2,7 @@
 
 > Feature: Stage 01 — 😂 더 웃긴 이야기 탭 (React Q&A 심화 대화)
 > Created: 2026-04-05
-> Phase: Plan
+> Phase: Done
 
 ---
 

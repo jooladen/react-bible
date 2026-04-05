@@ -53,7 +53,10 @@ src/
 │       ├── theory.tsx             [신규] 이중 설명 (초딩/개발자)
 │       ├── playground.tsx         [신규] Bad/Good Case + 메모리 주소 시각화 (레거시 — combined로 대체됨)
 │       ├── code-viewer.tsx        [신규] 3개 코드 스니펫 탭
-│       └── combined.tsx           [신규] CombinedStageView 기반 통합 뷰 (theory+demo+code 탭 통합)
+│       ├── combined.tsx           [신규] CombinedStageView 기반 통합 뷰 (6개 TopicTab)
+│       ├── deep-dive.tsx          [신규] Fiber 아키텍처 4인방 심화 (Tab 4)
+│       ├── funny-story.tsx        [신규] Fiber Q&A 스토리텔링 Q1~Q4, useTransition (Tab 5)
+│       └── quiz.tsx               [신규] 불변성 자가 점검 퀴즈 4문제 + 점수 화면 (Tab 6)
 ├── components/
 │   ├── ui/
 │   │   ├── card.tsx               [신규] shadcn Card

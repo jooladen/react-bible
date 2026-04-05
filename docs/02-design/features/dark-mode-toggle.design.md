@@ -3,7 +3,7 @@
 > Feature: Header 다크/라이트 모드 토글 버튼
 > Architecture: Option C — Pragmatic (Store, ThemeProvider 없이)
 > Created: 2026-04-02
-> Phase: Design
+> Phase: Done
 
 ---
 

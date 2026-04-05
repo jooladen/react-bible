@@ -3,7 +3,7 @@
 > Feature: Stage 01 — 😂 더 웃긴 이야기 탭 (React Q&A 심화 대화)
 > Architecture: deepdive variant 재사용 — 질문 박스 + 응답 카드
 > Created: 2026-04-05
-> Phase: Plan
+> Phase: Done
 
 ---
 

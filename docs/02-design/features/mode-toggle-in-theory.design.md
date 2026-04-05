@@ -3,7 +3,7 @@
 **Feature**: `mode-toggle-in-theory`
 **Architecture**: Option B — 신규 compact TheoryModeToggle + StageLayout 주입
 **Date**: 2026-04-04
-**Phase**: Design
+**Phase**: Done
 
 ---
 

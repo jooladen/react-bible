@@ -2,7 +2,7 @@
 
 > Feature: Header 다크/라이트 모드 토글 버튼
 > Created: 2026-04-02
-> Phase: Plan
+> Phase: Done
 
 ---
 

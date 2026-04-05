@@ -40,8 +40,11 @@ page.tsx
 Stage01Combined
   └── TOPICS: TopicTab[] 배열 정의
        ├── Tab 1: 일반변수 vs 상태변수
-       ├── Tab 2: 배열/객체 불변성
-       └── Tab 3: Immer
+       ├── Tab 2: 배열/객체 불변성 (code: ❌push / ✅spread / ✅CRUD 3종)
+       ├── Tab 3: Immer
+       ├── Tab 4: 더 깊이 — Fiber 아키텍처 4인방 (variant: deepdive)
+       ├── Tab 5: 더 웃긴 이야기 — Fiber Q&A + useTransition (variant: deepdive)
+       └── Tab 6: 🧪 퀴즈 — 불변성 자가 점검 4문제 (variant: demo)
 ```
 
 **핵심 원칙**:
