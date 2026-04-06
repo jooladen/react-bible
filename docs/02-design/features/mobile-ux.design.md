@@ -255,7 +255,49 @@ function handleTabChange(id: string) {
 </button>
 ```
 
+**메인 콘텐츠**: `<main className="flex-1 overflow-auto bg-card">` — pb 없음 (스크롤 여백은 stage-layout 내 spacer로 처리)
+
 **데스크탑 토글 버튼**: `{isDesktop && <button>}` JS 조건부 렌더링 (Tailwind v4 `hidden md:block` 불가)
+
+---
+
+### 2.5 stage-layout.tsx 수정
+
+**파일**: `src/components/layout/stage-layout.tsx`
+
+**역할**: 모바일에서 학습완료/이전/다음 nav bar를 하단 고정, 콘텐츠 끝까지 스크롤 보장.
+
+**isDesktop 상태**:
+```typescript
+const [isDesktop, setIsDesktop] = useState(true)
+useEffect(() => {
+  const mq = window.matchMedia("(min-width: 768px)")
+  setIsDesktop(mq.matches)
+  const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches)
+  mq.addEventListener("change", handler)
+  return () => mq.removeEventListener("change", handler)
+}, [])
+```
+
+**모바일 nav bar** (이전/학습완료/다음):
+```tsx
+<div
+  className="flex shrink-0 items-center justify-between border-t border-border bg-background px-6 py-3"
+  style={!isDesktop ? { position: "fixed", bottom: 45, left: 0, right: 0, zIndex: 20 } : undefined}
+>
+```
+- Tailwind v4 `bottom-[45px]` arbitrary value 모바일 오작동 → inline style 사용
+- `bottom: 45` = ☰ 버튼 높이(~45px) 위에 딱 붙임
+- 데스크탑: `shrink-0` flex 하단에 자연스럽게 위치
+
+**콘텐츠 영역 spacer**:
+```tsx
+{/* 모바일 fixed nav(~44px) + ☰(~45px) 가림 방지 spacer */}
+{!isDesktop && <div style={{ height: 96 }} aria-hidden="true" />}
+```
+- content div의 마지막 자식으로 위치
+- fixed nav 44px + ☰ 45px = 89px 가림 → height 96px으로 스크롤 공간 확보
+- `pb-*` Tailwind 클래스 대신 자식 div 사용 (iOS Safari scrollHeight에 padding 미반영 버그 우회)
 
 ---
 
@@ -267,7 +309,8 @@ function handleTabChange(id: string) {
 | 사이드바 | BottomSheetSidebar | 기존 left overlay |
 | 사이드바 토글 | 하단 고정 버튼 | 기존 fixed left 버튼 |
 | 데모/코드 | 세그먼티드 탭 전환 | 좌우 분할 |
-| 메인 콘텐츠 패딩 | pb-16 | pb-0 |
+| 메인 콘텐츠 패딩 | 없음 (stage-layout spacer 96px) | 없음 |
+| 학습완료 nav | fixed bottom:45, zIndex:20 (inline style) | shrink-0 flex 하단 |
 
 ---
 
@@ -309,7 +352,10 @@ main-layout.tsx
 | code 없는 탭(퀴즈 등): 세그먼티드 탭·코드 패널 미표시 | 퀴즈 탭 진입 확인 | ✅ |
 | deepdive 탭(더깊이·더웃긴이야기): 풀스크린 이론, 데모/코드 없음 | 탭 클릭 확인 | ✅ |
 | Bottom Sheet 슬라이드 | ☰ 클릭 → 올라옴, backdrop 클릭 → 닫힘 | ✅ |
+| 학습완료 nav bar 하단 고정 (☰ 위) | Galaxy S23+ 실기기 확인 | ✅ |
+| 콘텐츠 끝까지 스크롤, nav/☰에 안 가려짐 | Galaxy S23+ 실기기 확인 | ✅ |
 | 데스크탑 기존 레이아웃 유지 | 1280px 브라우저 확인 | ✅ |
+| 실기기 Vercel 배포 검증 | Galaxy S23+ vercel URL | ✅ |
 | 빌드 에러 0건 | `pnpm build` | ✅ |
 
 ---
