@@ -14,14 +14,17 @@ function StageItem({
   stage,
   isActive,
   isDone,
+  onClose,
 }: {
   stage: Stage
   isActive: boolean
   isDone: boolean
+  onClose?: () => void
 }) {
   return (
     <Link
       href={`/stage/${stage.slug}`}
+      onClick={onClose}
       className={cn(
         "group flex items-start gap-2 rounded-md px-3 py-2 text-sm transition-all",
         isActive
@@ -75,16 +78,6 @@ export function Sidebar({ onClose }: { onClose?: () => void }) {
               </p>
             </div>
           </div>
-          {/* 모바일 닫기 버튼 */}
-          {onClose && (
-            <button
-              onClick={onClose}
-              className="md:hidden flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground hover:bg-accent hover:text-foreground"
-              aria-label="사이드바 닫기"
-            >
-              <span className="text-base leading-none">×</span>
-            </button>
-          )}
         </div>
       </div>
 
@@ -132,6 +125,7 @@ export function Sidebar({ onClose }: { onClose?: () => void }) {
                     stage={stage}
                     isActive={activeSlug === stage.slug}
                     isDone={resolveStageCompletion(stage.slug, completedSlugs, stage.status)}
+                    onClose={onClose}
                   />
                 ))}
               </div>
