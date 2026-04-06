@@ -1,6 +1,6 @@
 {
   "version": "3.0",
-  "lastUpdated": "2026-04-05T23:02:37.739Z",
+  "lastUpdated": "2026-04-06T00:14:16.139Z",
   "activeFeatures": [
     "react-bible",
     "stores",
@@ -24,9 +24,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-04-01T13:01:47.628Z",
-        "lastUpdated": "2026-04-05T06:52:28.095Z"
+        "lastUpdated": "2026-04-05T23:40:28.894Z"
       },
-      "lastFile": "C:\\Users\\jooladen\\Desktop\\claude-code2\\react-bible\\src\\types\\combined-stage.ts",
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\claude-code2\\react-bible\\next.config.ts",
       "stateMachine": {
         "currentState": "do",
         "previousState": null,
@@ -80,9 +80,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-04-01T13:03:00.615Z",
-        "lastUpdated": "2026-04-05T23:02:37.731Z"
+        "lastUpdated": "2026-04-06T00:14:16.131Z"
       },
-      "lastFile": "C:\\Users\\jooladen\\Desktop\\claude-code2\\react-bible\\src\\components\\layout\\main-layout.tsx"
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\claude-code2\\react-bible\\src\\components\\layout\\stage-layout.tsx"
     },
     "providers": {
       "phase": "do",
@@ -171,7 +171,7 @@
   "session": {
     "startedAt": "2026-04-01T13:01:47.628Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-04-05T23:02:37.739Z"
+    "lastActivity": "2026-04-06T00:14:16.139Z"
   },
   "history": [
     {
@@ -2144,6 +2144,96 @@
     },
     {
       "timestamp": "2026-04-05T23:02:37.738Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T23:04:51.051Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T23:11:31.588Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T23:11:42.633Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T23:11:56.745Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T23:12:05.871Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T23:40:28.900Z",
+      "feature": "react-bible",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T23:55:38.402Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T23:55:47.633Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T23:55:55.007Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-06T00:00:03.330Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-06T00:00:13.068Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-06T00:07:57.225Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-06T00:11:13.883Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-06T00:11:25.354Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-06T00:14:16.137Z",
       "feature": "layout",
       "phase": "do",
       "action": "updated"

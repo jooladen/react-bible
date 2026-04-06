@@ -32,7 +32,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
       )}
 
       {/* 메인 콘텐츠 — 모바일에서 하단 버튼 여백 확보 */}
-      <main className="flex-1 overflow-auto bg-card pb-[244px] md:pb-0">{children}</main>
+      <main className="flex-1 overflow-auto bg-card">{children}</main>
 
       {/* 모바일 Bottom Sheet 사이드바 — Design Ref: §2.2 */}
       <BottomSheetSidebar
