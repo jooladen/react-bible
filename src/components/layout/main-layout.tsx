@@ -28,7 +28,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
       {/* 데스크탑 사이드바 — 조건부 렌더링 (Tailwind hidden/md:block 충돌 방지) */}
       {/* Design Ref: §2.4 — 모바일/데스크탑 사이드바 분기 */}
       {isDesktop && sidebarOpen && (
-        <Sidebar onClose={() => setSidebarOpen(false)} />
+        <Sidebar />
       )}
 
       {/* 메인 콘텐츠 — 모바일에서 하단 버튼 여백 확보 */}
