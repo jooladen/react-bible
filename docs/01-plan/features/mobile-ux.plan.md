@@ -17,7 +17,7 @@
 | **WHO** | 이동 중 학습하는 사용자, 폰으로 react-bible 확인하는 개발자 |
 | **RISK** | 데스크탑 레이아웃 깨짐 금지 — 모바일 전용 처리(md: breakpoint)로 격리 |
 | **SUCCESS** | 모바일에서 탭 6개가 한 줄에 표시, 스크롤 없이 데모 또는 코드 확인 가능 |
-| **SCOPE** | 4개 파일 — combined-stage-view.tsx, main-layout.tsx 수정 + mobile-tab-bar.tsx, bottom-sheet-sidebar.tsx 신규 |
+| **SCOPE** | 6개 파일 — combined-stage-view.tsx, main-layout.tsx, stage-layout.tsx, sidebar.tsx 수정 + mobile-tab-bar.tsx, bottom-sheet-sidebar.tsx 신규 |
 
 ---
 
@@ -63,9 +63,8 @@
 | `src/components/layout/combined-stage-view.tsx` | 수정 | MobileTabBar 주입 + isDesktop 분기 + 데모/코드 탭 전환 |
 | `src/components/layout/main-layout.tsx` | 수정 | BottomSheetSidebar 주입 + 하단 버튼 + isDesktop 분기 |
 | `src/components/layout/stage-layout.tsx` | 수정 | 모바일 nav 포지셔닝(inline style fixed) + 콘텐츠 스크롤 spacer |
+| `src/components/layout/sidebar.tsx` | 수정 | X 버튼 제거, StageItem onClick=onClose(모바일 자동 닫힘), 데스크탑은 onClose 미전달 |
 | `next.config.ts` | 수정 | allowedDevOrigins 추가 (로컬 IP 실기기 테스트용) |
-
-**sidebar.tsx 수정 없음.**
 
 ---
 
@@ -189,6 +188,8 @@ useEffect(() => {
 - 모바일(390px): 탭 6개 한 줄 아이콘으로 표시, 이름 아래 별도 표시 ✅
 - 모바일(390px): 데모/코드 탭 클릭으로 전환 (code 필드 없는 탭은 세그먼티드 탭 미표시) ✅
 - 모바일(390px): 하단 ☰ 클릭 → Bottom Sheet 올라옴 ✅
+- 모바일(390px): 스테이지 선택 → Bottom Sheet 자동 닫힘 ✅
+- 데스크탑(1280px): 스테이지 선택해도 사이드바 유지, ‹/› 버튼으로만 닫힘 ✅
 - 모바일(390px): 학습완료 nav bar가 ☰ 버튼 바로 위에 고정 표시 ✅
 - 모바일(390px): 콘텐츠 끝까지 스크롤 가능, nav/☰ 버튼에 안 가려짐 ✅
 - 데스크탑(1280px): 탭 6개 + 좌우 코드 패널 유지, 기존 레이아웃 그대로 ✅

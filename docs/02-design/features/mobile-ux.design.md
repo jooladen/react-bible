@@ -232,9 +232,9 @@ function handleTabChange(id: string) {
 
 [변경 후]
   모바일:
-    <main className="pb-16 md:pb-0">...</main>
+    <main className="flex-1 overflow-auto bg-card">...</main>
     <BottomSheetSidebar open={...} onClose={...}>
-      <Sidebar />
+      <Sidebar onClose={() => setSidebarOpen(false)} />
     </BottomSheetSidebar>
     <button className="fixed bottom-0 ... md:hidden">☰ 스테이지 목록 ↑</button>
 
@@ -261,7 +261,34 @@ function handleTabChange(id: string) {
 
 ---
 
-### 2.5 stage-layout.tsx 수정
+### 2.5 sidebar.tsx 수정
+
+**파일**: `src/components/layout/sidebar.tsx`
+
+**변경 내용**:
+- X 버튼 (헤더 닫기 버튼) 제거 — 스테이지 선택 자동 닫힘으로 대체
+- `StageItem`에 `onClose?: () => void` prop 추가
+- `<Link onClick={onClose}>` — 클릭 시 Bottom Sheet 자동 닫힘 (모바일)
+- 데스크탑 `<Sidebar />`: `onClose` 미전달 → 스테이지 선택해도 사이드바 유지
+
+```tsx
+// StageItem — onClose prop 추가
+function StageItem({ stage, isActive, isDone, onClose }: { ...; onClose?: () => void }) {
+  return (
+    <Link href={`/stage/${stage.slug}`} onClick={onClose} ...>
+      ...
+    </Link>
+  )
+}
+
+// main-layout.tsx — 데스크탑: onClose 미전달, 모바일: onClose 전달
+{isDesktop && sidebarOpen && <Sidebar />}  // 데스크탑
+<Sidebar onClose={() => setSidebarOpen(false)} />  // 모바일(BottomSheet 내부)
+```
+
+---
+
+### 2.6 stage-layout.tsx 수정
 
 **파일**: `src/components/layout/stage-layout.tsx`
 
@@ -337,8 +364,9 @@ main-layout.tsx
 | `src/components/layout/bottom-sheet-sidebar.tsx` | 신규 | ~40줄 |
 | `src/components/layout/combined-stage-view.tsx` | 수정 | +~30줄 |
 | `src/components/layout/main-layout.tsx` | 수정 | +~25줄 |
+| `src/components/layout/sidebar.tsx` | 수정 | X 버튼 제거, StageItem 자동 닫힘 |
 
-**총 영향: 4파일, 신규 ~85줄, 추가 ~55줄**
+**총 영향: 5파일, 신규 ~85줄, 추가 ~55줄**
 
 ---
 
@@ -352,6 +380,8 @@ main-layout.tsx
 | code 없는 탭(퀴즈 등): 세그먼티드 탭·코드 패널 미표시 | 퀴즈 탭 진입 확인 | ✅ |
 | deepdive 탭(더깊이·더웃긴이야기): 풀스크린 이론, 데모/코드 없음 | 탭 클릭 확인 | ✅ |
 | Bottom Sheet 슬라이드 | ☰ 클릭 → 올라옴, backdrop 클릭 → 닫힘 | ✅ |
+| 스테이지 선택 → 모바일 자동 닫힘 | sidebar.tsx StageItem onClick=onClose | ✅ |
+| 스테이지 선택 → 데스크탑 유지 | 데스크탑 Sidebar onClose 미전달 | ✅ |
 | 학습완료 nav bar 하단 고정 (☰ 위) | Galaxy S23+ 실기기 확인 | ✅ |
 | 콘텐츠 끝까지 스크롤, nav/☰에 안 가려짐 | Galaxy S23+ 실기기 확인 | ✅ |
 | 데스크탑 기존 레이아웃 유지 | 1280px 브라우저 확인 | ✅ |

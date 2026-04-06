@@ -202,7 +202,7 @@ import { Stage01CodeViewer } from "@/features/stage-01-immutability/code-viewer"
 | `src/stores/explanation-store.ts` | ✅ |
 | `src/components/ui/badge.tsx` | ✅ |
 | `src/components/layout/explanation-toggle.tsx` | ✅ (? 힌트 tooltip + pulse + 모바일 텍스트 숨김) |
-| `src/components/layout/sidebar.tsx` | ✅ (그룹 서브타이틀 + onClose prop + 모바일 × 버튼) |
+| `src/components/layout/sidebar.tsx` | ✅ (그룹 서브타이틀 + StageItem 모바일 자동 닫힘, × 버튼 없음) |
 | `src/components/layout/stage-layout.tsx` | ✅ (concept 인라인, 이전/다음, 키보드 이동, 마지막 방문 저장) |
 | `src/components/layout/main-layout.tsx` | ✅ (신규: 사이드바 토글 + 모바일 오버레이) |
 | `src/components/layout/home-redirect.tsx` | ✅ (신규: 마지막 방문 복귀) |
@@ -238,7 +238,7 @@ import { Stage01CodeViewer } from "@/features/stage-01-immutability/code-viewer"
   → Sidebar: fixed inset-y-0 left-0 z-40 translate-x-0
   → Backdrop: fixed inset-0 z-30 bg-black/60
 
-Backdrop 클릭 또는 × 버튼:
+Backdrop 클릭 또는 스테이지 선택(모바일):
   sidebarOpen = false
   → Sidebar: translate-x-full (슬라이드 아웃)
   → Backdrop: 제거
@@ -258,7 +258,7 @@ Backdrop 클릭 또는 × 버튼:
 | 파일 | 변경 내용 |
 |------|-----------|
 | `main-layout.tsx` | `useEffect`로 md 이상 기본 열림, backdrop overlay, sidebarOpen 초기값 false |
-| `sidebar.tsx` | `onClose?: () => void` prop 추가, 헤더에 × 버튼 (md:hidden) |
+| `sidebar.tsx` | StageItem onClick=onClose(모바일 자동 닫힘), 데스크탑 onClose 미전달, × 버튼 없음 |
 | `explanation-toggle.tsx` | `🟢 초딩모드`, `🔵 개발자모드` 텍스트에 `hidden sm:inline` 추가 |
 | `layout.tsx` | 로고 `hidden sm:inline` / `sm:hidden` 분기 |
 
